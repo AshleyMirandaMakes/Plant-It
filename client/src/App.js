@@ -14,7 +14,7 @@ function App() {
         <Route path="/" component={HomePage} exact />
         <Route path="/main" component={MainPage} exact/>
        <Route path="/plantPicker" component={PlantPickerPage} exact/>
-       <Route path="/plantList" component={PlantListPage} exact/>
+       <Route path="/allPlants" component={PlantListPage} exact/>
         {/* <Route path="/plantList/:id" component={} exact/> */}
         <Route path="/favoritePlants" component={FavoritePlantsPage} exact/> 
       </Switch>

@@ -1,13 +1,12 @@
 import "./MainPage.scss";
-import {Link} from "react-router-dom";
 import { Component } from "react";
 
 import Nav from "../components/Nav/Nav";
 
 class MainPage extends Component {
-  state = {
-    isLoggedIn : false,
-  }
+  // state = {
+  //   isLoggedIn : false,
+  // }
 
   render () {
   return (

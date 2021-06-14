@@ -24,11 +24,11 @@ Link {
   margin: 0;
 }
 
-// body {
-//   @include font-light;
-//   color: $color-black;
-//   background: $color-lightgray;
-// }
+body {
+  @include font-light;
+  // color: $color-black;
+  // background: $color-lightgray;
+}
 
 // h1 {
 //   @include font-regular;

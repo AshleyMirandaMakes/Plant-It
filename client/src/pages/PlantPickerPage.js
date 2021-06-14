@@ -9,6 +9,9 @@ class PlantPickerPage extends Component {
     //selectedPlant: "",
   };
 
+  componentDidMount() {
+    
+  }
 
   
   

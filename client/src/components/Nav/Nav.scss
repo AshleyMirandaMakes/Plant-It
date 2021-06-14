@@ -19,7 +19,7 @@
     color: $color-dark-green;
     padding-left: .5rem;
     &--special {
-      @include font-bold;
+      @include font-abril;
       color: $color-pink;
       padding-left: 0;
     }

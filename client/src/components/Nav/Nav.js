@@ -34,12 +34,12 @@ class Nav extends Component {
               picker
             </Link>
             <Link className='nav__link'
-              to={"/plantList"}
+              to={"/allPlants"}
             >
               list
             </Link>
             <Link className='nav__link'
-              to={"/FavoritePlants"}
+              to={"/favoritePlants"}
             >
               favorites 
             </Link>

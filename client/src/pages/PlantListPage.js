@@ -4,6 +4,7 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import './PlantListPage.scss';
 
 class PlantListPage extends Component {
   state = {
@@ -39,6 +40,8 @@ class PlantListPage extends Component {
               key={plant.id}
               id={plant.id}
               commonName={plant.commonName}
+              difficulty={plant.difficulty}
+              size={plant.size}
             />
           ))}
     </div>

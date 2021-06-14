@@ -5,12 +5,16 @@ import { Component } from "react";
 class PlantPickerPage extends Component {
   state = {
     //isLoggedIn: true,
-    //plants: [],
-    //selectedPlant: "",
+    "watering" : "",
+    "difficulty": "",
+    "toxicDogs": false,
+    "toxicCats": false,
+    "light": "" ,
+    "size":"",
   };
 
   componentDidMount() {
-    
+
   }
 
   
@@ -19,10 +23,15 @@ class PlantPickerPage extends Component {
  render() {
    console.log(this.state.plants)
   return (
-    <div className="plantList">
-    <Nav/>
-    <h1>Hi from the plant picker page</h1>
+    <>
+      <Nav/>
+        <div className="plantPicker__container">
+        <h2 className="plantPicker__header">How much plant experience do you have?</h2>
+        <button className="plantPicker__button">Beginner</button>
+        <button className="plantPicker__button">Medium</button>
+        <button className="plantPicker__button">Advanced</button>
     </div>
+    </>
   )
 }
 }

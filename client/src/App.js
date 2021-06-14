@@ -5,6 +5,8 @@ import PlantPickerPage from "./pages/PlantPickerPage";
 import PlantListPage from "./pages/PlantListPage";
 import FavoritePlantsPage from "./pages/FavoritePlantsPage";
 
+import "./App.scss"
+
 
 function App() {
   return (

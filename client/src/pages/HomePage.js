@@ -11,6 +11,7 @@ class HomePage extends Component {
   return (
     <div className="homePage">
      <h1>hi from the homePage</h1>
+     {/* <Login/> */}
     </div>
   )
   }

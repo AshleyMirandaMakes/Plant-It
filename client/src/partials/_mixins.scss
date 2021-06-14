@@ -1,0 +1,58 @@
+@use './variables' as *;
+@use './fonts' as *;
+
+//breakpoints
+@mixin mid-mobile {
+  @media screen and (min-width: 475px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+//general
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin list-reset {
+  list-style-type: none;
+}
+
+@mixin link-reset {
+  text-decoration: none;
+  color: $color-white;
+}
+
+@mixin margin-auto {
+  margin: 0 auto;
+}
+
+@mixin margin-pad-zero {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin status-tag {
+  display: flex;
+  align-items: center;
+  height: 1.5rem;
+  font-size: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 1.25rem;
+  text-transform: uppercase;
+}
+
+

@@ -1,13 +1,27 @@
 import Nav from "../components/Nav/Nav";
 
-function PlantPickerPage(){
+import { Component } from "react";
 
+class PlantPickerPage extends Component {
+  state = {
+    //isLoggedIn: true,
+    //plants: [],
+    //selectedPlant: "",
+  };
+
+
+  
+  
+
+ render() {
+   console.log(this.state.plants)
   return (
-    <div className="plantPicker">
+    <div className="plantList">
     <Nav/>
-     <h1>Hi from the plant picker page</h1>
+    <h1>Hi from the plant picker page</h1>
     </div>
   )
+}
 }
 
 export default PlantPickerPage;

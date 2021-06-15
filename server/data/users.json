@@ -1,9 +1,1 @@
-[
-  {
-    "id": 1,
-    "username" : "",
-    "password" : "",
-    "confirmedPassword" : "",
-    "favoritePlants" : []
-  }
-]
+[{"id":1,"firstName":"","password":"","email":"","favoritePlants":[]},{"id":"91b925eb-681f-49f3-b3b7-6579708d555b","firstName":"Ashley","email":"ash@gmail.com","password":"$2b$06$XBfLg2kTe5gmtNEJURCiZeayT55J3XJRlZJt2q60.vr/wMEUew1Xu"},{"id":"71b55526-b069-4df5-8fe4-77696a5c4dfe","firstName":"Ashley","email":"ash@gmail.com","password":"$2b$06$8Das5Tl9AYi5H6SIXq02Yu3WOKnncCeA23aGnqI9snu7WiJ45/aqi"},{"id":"03091d95-f64a-4b3b-a0d3-c65e1719fe60","firstName":"Ash","email":"ash@gmail.com","password":"$2b$06$ENUX0769L7CGu.1ySJQ9J..2ZFkX/G5apMeByKmxsJTa3M37xbTqe"}]

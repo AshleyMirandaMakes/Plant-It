@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const signUpRoute = require("./routes/signUp");
-const loginRoute = require("./routes/login");
+const signUpRoute = require("./routes/users");
+const loginRoute = require("./routes/users");
 const allPlantsRoute = require("./routes/allPlants");
 const plantPickerRoute = require("./routes/plantPicker");
 const favoritePlantsRoute = require("./routes/favoritePlants");
@@ -22,23 +22,23 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  if (
-    req.method === "POST" &&
-    req.headers["content-type"] !== "application/json;charset=UTF-8"
-  ) {
-    return res.status(400).json({
-      message: "POST requests must contain content-type=application/json",
-    });
-  } else {
-    next();
-  }
-});
+// app.use((req, res, next) => {
+//   if (
+//     req.method === "POST" &&
+//     req.headers["content-type"] !== "application/json;charset=UTF-8"
+//   ) {
+//     return res.status(400).json({
+//       message: "POST requests must contain content-type=application/json",
+//     });
+//   } else {
+//     next();
+//   }
+// });
 
 // Routes
-app.use("/users/signup", signUpRoute);
-app.use("/users/login", loginRoute);
-app.use("/allPlants", allPlantsRoute);
+app.use("/api/users", signUpRoute);
+app.use("api/users", loginRoute);
+app.use("/allPlants", allPlantsRoute); //TODO add api, link properly in client -- all 3
 app.use("/plantPicker", plantPickerRoute);
 app.use("/favoritePlants", favoritePlantsRoute);
 

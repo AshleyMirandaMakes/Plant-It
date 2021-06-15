@@ -1,0 +1,25 @@
+@use '../partials/mixins' as *;
+@use '../partials/variables' as *;
+@use '../partials/resets' as *;
+
+.plantPicker {
+  width: 100%;
+  background-image: url ('../assets/images/mosaic-background.jpg'); //hm not working
+  padding: 1rem;
+  &__header {
+    @include font-abril;
+    color: $color-green;
+    padding: .5rem 0;
+    font-size: 1.55rem;
+  }
+  &__button-container{
+    display: flex;
+    flex-direction: column;
+  }
+  &__button {
+    @include flex-center;
+    padding: 2.5rem;
+    margin: .5rem 0;
+    font-size: 1.25rem;
+  }
+}

@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import SignUpPage from "./pages/SignUpPage";
 import MainPage from "./pages/MainPage";
 import PlantPickerPage from "./pages/PlantPickerPage";
 import PlantListPage from "./pages/PlantListPage";
@@ -13,12 +15,14 @@ function App() {
     <div className="App">
         <Router>
       <Switch>
-        <Route path="/" component={HomePage} exact />
+        {/* <Route path="/" component={HomePage} exact /> */}
+        <Route path="/" component={LoginPage} exact />
         <Route path="/main" component={MainPage} exact/>
-       <Route path="/plantPicker" component={PlantPickerPage} exact/>
-       <Route path="/allPlants" component={PlantListPage} exact/>
+        <Route path="/plantPicker" component={PlantPickerPage} exact/>
+        <Route path="/allPlants" component={PlantListPage} exact/>
         {/* <Route path="/plantList/:id" component={} exact/> */}
         <Route path="/favoritePlants" component={FavoritePlantsPage} exact/> 
+        <Route path="/signUp" component={SignUpPage} exact/> 
       </Switch>
     </Router>
     </div>

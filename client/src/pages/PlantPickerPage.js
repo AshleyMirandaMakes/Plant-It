@@ -1,6 +1,7 @@
 import Nav from "../components/Nav/Nav";
-
 import { Component } from "react";
+
+import "./PlantPickerPage.scss";
 
 class PlantPickerPage extends Component {
   state = {
@@ -25,11 +26,13 @@ class PlantPickerPage extends Component {
   return (
     <>
       <Nav/>
-        <div className="plantPicker__container">
+        <div className="plantPicker">
         <h2 className="plantPicker__header">How much plant experience do you have?</h2>
-        <button className="plantPicker__button">Beginner</button>
-        <button className="plantPicker__button">Medium</button>
-        <button className="plantPicker__button">Advanced</button>
+          <div className="plantPicker__button-container">
+            <button className="plantPicker__button">Beginner</button>
+            <button className="plantPicker__button">Medium</button>
+            <button className="plantPicker__button">Advanced</button>
+        </div>
     </div>
     </>
   )

@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Lato Hairline";
+  src: url("../assets/fonts/Lato-Hairline.woff2") format("woff2"),
+    url("../assets/fonts/Lato-Hairline.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato Hairline";
+  src: url("../assets/fonts/Lato-HairlineItalic.woff2") format("woff2"),
+    url("../assets/fonts/Lato-HairlineItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: "Lato";
+  src: url("../assets/fonts/Lato-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Lato-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Abril Fatface';
+  src: url('../assets/fonts/AbrilFatface-Regular.woff2') format('woff2'),
+      url('../assets/fonts/AbrilFatface-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}

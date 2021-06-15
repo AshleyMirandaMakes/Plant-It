@@ -55,4 +55,27 @@
   text-transform: uppercase;
 }
 
+//fonts
+
+@mixin font-light {
+  font-family: "Lato Hairline";
+  font-weight: 300;
+}
+
+@mixin font-light-italic {
+  font-family: "Lato Hairline";
+  font-weight: 300;
+  font-style: italic
+}
+
+@mixin font-bold {
+  font-family: "Lato";
+  font-weight: 700;
+}
+
+@mixin font-abril {
+  font-family: "Abril Fatface", sans-serif;
+  font-weight: 400;
+}
+
 

@@ -36,8 +36,8 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use("/signup", signUpRoute);
-app.use("/login", loginRoute);
+app.use("/users/signup", signUpRoute);
+app.use("/users/login", loginRoute);
 app.use("/allPlants", allPlantsRoute);
 app.use("/plantPicker", plantPickerRoute);
 app.use("/favoritePlants", favoritePlantsRoute);

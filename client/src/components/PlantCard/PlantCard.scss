@@ -1,0 +1,33 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/variables' as *;
+@use '../../partials/resets' as *;
+
+.plantCard {
+  width: 100%;
+  padding: .5rem;
+  display: flex;
+  &__left{
+    width: 30%;
+    margin: .5rem;
+    height: 70px;
+    width: 70px;
+
+  }
+  &__right{
+    max-width: 70%;
+    width: 70%;
+    padding: .5rem 0;
+  }
+  &__heading{
+    @include font-bold;
+    color: $color-green;
+  }
+  &__subheadings{
+    display: flex;
+    justify-content: space-between;
+    padding-top: .5rem;
+  }
+  &__details {
+    @include font-light; // make thicker
+  }
+}

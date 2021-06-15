@@ -23,37 +23,25 @@ class Nav extends Component {
   render() {
     return (
       <nav className='nav'>
-        <div className='nav__top-container'>
-          {/* <Link to={"/"} onClick={this.toggleHome}>
-            <img src={} alt="insert logo"/> 
-          </Link> */}
+        <div className='nav__container'>
+          <Link to={"/"} className='nav__link--special nav__link'>
+            Plant-It
+          </Link>
           <div className='nav__link-container'>
-            <Link
+            <Link className='nav__link'
               to={"/plantPicker"}
-              // className={`nav__link ${
-              //   this.state.toggleClass ? "nav__link--special" : ""
-              // }`}
-              // onClick={this.toggleBtn}
             >
-              Plant Picker
+              picker
             </Link>
-            <Link
-              to={"/plantList"}
-              // className={`nav__link ${
-              //   !this.state.toggleClass ? "nav__link--special" : ""
-              // }`}
-              // onClick={this.toggleBtn}
+            <Link className='nav__link'
+              to={"/allPlants"}
             >
-              Plant List
+              list
             </Link>
-            <Link
-              to={"/FavoritePlants"}
-              // className={`nav__link ${
-              //   !this.state.toggleClass ? "nav__link--special" : ""
-              // }`}
-              // onClick={this.toggleBtn}
+            <Link className='nav__link'
+              to={"/favoritePlants"}
             >
-              Favorite Plants
+              favorites 
             </Link>
           </div>
         </div>
@@ -61,5 +49,37 @@ class Nav extends Component {
     );
   }
 }
+
+// {/* <Link to={"/"} onClick={this.toggleHome}>
+//             <img src={} alt="insert logo"/> 
+//           </Link> */}
+//           <div className='nav__link-container'>
+//             <Link
+//               to={"/plantPicker"}
+//               // className={`nav__link ${
+//               //   this.state.toggleClass ? "nav__link--special" : ""
+//               // }`}
+//               // onClick={this.toggleBtn}
+//             >
+//               picker
+//             </Link>
+//             <Link
+//               to={"/plantList"}
+//               // className={`nav__link ${
+//               //   !this.state.toggleClass ? "nav__link--special" : ""
+//               // }`}
+//               // onClick={this.toggleBtn}
+//             >
+//               list
+//             </Link>
+//             <Link
+//               to={"/FavoritePlants"}
+//               // className={`nav__link ${
+//               //   !this.state.toggleClass ? "nav__link--special" : ""
+//               // }`}
+//               // onClick={this.toggleBtn}
+//             >
+//               favorites 
+//             </Link>
 
 export default Nav;

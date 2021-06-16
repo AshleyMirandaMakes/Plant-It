@@ -130,7 +130,7 @@ const StepOne = (props) => {
 
   return(
   <div className="plantPicker">
-    <h2 className="plantPicker__header">{currentStep}"What experience level do you have?"</h2>
+    <h2 className="plantPicker__header">{currentStep}What experience level do you have?</h2>
       <div className="plantPicker__button-container">
         <button 
           className="plantPicker__button"
@@ -157,7 +157,7 @@ const StepTwo = (props) => {
   
   return(
     <div className="plantPicker">
-      <h2 className="plantPicker__header">{currentStep}"Do you have pets?"</h2>
+      <h2 className="plantPicker__header">{currentStep}Do you have pets?</h2>
         <div className="plantPicker__button-container">
           <button 
             className="plantPicker__button"
@@ -185,7 +185,7 @@ const StepThree = (props) => {
 
   return(
     <div className="plantPicker">
-      <h2 className="plantPicker__header">{currentStep}"What size plant are you looking for?"</h2>
+      <h2 className="plantPicker__header">{currentStep}What size plant are you looking for?</h2>
         <div className="plantPicker__button-container">
           <button 
             className="plantPicker__button"
@@ -213,7 +213,7 @@ const StepFour = (props) => {
 
   return(
     <div className="plantPicker">
-      <h2 className="plantPicker__header">{currentStep}"What type of light will this plant live in?"</h2>
+      <h2 className="plantPicker__header">{currentStep}What type of light will this plant live in?</h2>
         <div className="plantPicker__button-container">
           <button 
             className="plantPicker__button"

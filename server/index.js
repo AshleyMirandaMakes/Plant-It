@@ -7,6 +7,10 @@ const allPlantsRoute = require("./routes/allPlants");
 const plantPickerRoute = require("./routes/plantPicker");
 const favoritePlantsRoute = require("./routes/favoritePlants");
 
+//express.static
+//public images in static folder
+//serve those images form data
+//party
 
 
 // Configuration

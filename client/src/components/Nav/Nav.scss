@@ -16,11 +16,11 @@
   }
   &__link {
     @include link-reset;
-    color: $color-dark-green;
+    color: $color-pink;
     padding-left: .5rem;
     &--special {
       @include font-abril;
-      color: $color-pink;
+      color: $color-moss;
       padding-left: 0;
     }
   }

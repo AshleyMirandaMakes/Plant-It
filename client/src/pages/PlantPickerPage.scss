@@ -6,6 +6,10 @@
   width: 100%;
   background-image: url ('../assets/images/mosaic-background.jpg'); //hm not working
   padding: 1rem;
+  &__title {
+    margin: 1rem;
+    font-size: 3rem;
+  }
   &__header {
     @include font-abril;
     color: $color-green;

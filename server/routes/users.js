@@ -57,17 +57,51 @@ router.post("/signUp", (req, res) => {
     });
 })
 
-// router.post("/login", (req, res ) => {
-//   const {email , password } = req.body;
+router.post("/login", (req, res ) => {
+  const {email , password } = req.body;
 
-//     //if any fields are missing, return
-//     if (!email || !password) {
-//       return res.status(400).send("Please enter the required fields.");
-//     }
-//   .then 
-//     const users = loadUsers();
+    //if any fields are missing, return
+  if (!email || !password) {
+    return res.status(400).send("Please enter the required fields.");
+  }
+
+  //load json file
+  const users = loadUsers();
+  console.log(users)
   
-// })
+
+  users.find((user) => {
+    if (user.email === email) {
+      const token = jwt.sign(
+        { id: user.id, email: user.attributes.email },
+        process.env.JWT_SECRET,
+        { expiresIn: "24h" }
+      );
+
+      res.json({ token });
+    }
+  }
+
+  // .then((user) => {
+  //   console.log(user)
+  //   const correctPassword = bcrypt.compareSync(password, user.attributes.password);  
+  
+  //   if (!correctPassword) return res.status(400).send("Invalid password");
+
+  //     const token = jwt.sign(
+  //       { id: user.id, email: user.attributes.email },
+  //       process.env.JWT_SECRET,
+  //       { expiresIn: "24h" }
+  //     );
+
+  //   res.json({ token });
+  
+  // })
+  // .catch(() => res.status(400).send("Invalid credentials"))
+  // )
+)});
+
+
 
 
 

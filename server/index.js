@@ -38,9 +38,9 @@ app.use((req, res, next) => {
 // Routes
 app.use("/api/users", signUpRoute);
 app.use("api/users", loginRoute);
-app.use("/allPlants", allPlantsRoute); //TODO add api, link properly in client -- all 3
-app.use("/plantPicker", plantPickerRoute);
-app.use("/favoritePlants", favoritePlantsRoute);
+app.use("/api/allPlants", allPlantsRoute); //TODO add api, link properly in client -- all 3
+app.use("/api/plantPicker", plantPickerRoute);
+app.use("/api/favoritePlants", favoritePlantsRoute);
 
 
 app.listen(port, () => {

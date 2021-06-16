@@ -4,7 +4,7 @@ const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { v4: uuidv4 } = require("uuid");
-const path = require('path');
+//const path = require('path');
 
 
 function loadUsers() {

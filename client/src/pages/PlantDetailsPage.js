@@ -25,8 +25,8 @@ class PlantDetailsPage extends Component {
   }
 
   render (){
-    console.log(this.state.currentPlant); // ADD IMAGES
-    const { commonName, botanicalName, description, difficulty, flowering, light, perennial, size, care } = this.state.currentPlant;
+    console.log(this.state.currentPlant); 
+    const { commonName, botanicalName, description, image, difficulty, flowering, light, perennial, size, care } = this.state.currentPlant;
     console.log(commonName)
     
     return (
@@ -35,7 +35,7 @@ class PlantDetailsPage extends Component {
        <div className="plantDetails">
         <div className="plantDetails__container">
           <div className="plantDetails__top-container">
-          <div className="plantDetails__image"></div>
+          <img src={image} alt={commonName}/>
           <h2>{commonName}</h2>
           <h3>Also known as {botanicalName}</h3>
           </div>

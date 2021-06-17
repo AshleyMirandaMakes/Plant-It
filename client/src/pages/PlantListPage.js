@@ -39,6 +39,7 @@ class PlantListPage extends Component {
             <PlantCard
               key={plant.id}
               id={plant.id}
+              image={plant.image}
               commonName={plant.commonName}
               difficulty={plant.difficulty}
               size={plant.size}

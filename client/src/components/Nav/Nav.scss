@@ -4,7 +4,6 @@
 .nav {
   width: 100%;
   background-color: $color-white;
-  color: $color-dark-green;
   &__container {
     padding: .5rem;
     display: flex;
@@ -16,12 +15,19 @@
   }
   &__link {
     @include link-reset;
-    color: $color-dark-green;
+    color: $color-pink;
     padding-left: .5rem;
+    @include tablet{
+      font-size: 1.25rem;
+    }
     &--special {
       @include font-abril;
-      color: $color-pink;
+      color: $color-moss;
       padding-left: 0;
+      font-size: 1rem;
+      @include tablet{
+        font-size: 1.5rem;
+      }
     }
   }
-}
+} 

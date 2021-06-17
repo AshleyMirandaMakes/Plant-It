@@ -16,7 +16,7 @@ class PlantListPage extends Component {
 
   getPlants() {
     axios
-      .get(`http://localhost:8080/allPlants`)
+      .get(`http://localhost:8080/api/allPlants`)
       .then((response) => {
         this.setState({
           plants: response.data,

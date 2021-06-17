@@ -4,22 +4,39 @@
 
 .plantPicker {
   width: 100%;
-  background-image: url ('../assets/images/mosaic-background.jpg'); //hm not working
+  //background-image: url('../assets/images/mosaic-background.jpg'); 
+  background-color: $color-moss;
   padding: 1rem;
+  background-size: cover;
+  &__title {
+    //@include flex-center;
+    margin: 1rem;
+  }
   &__header {
     @include font-abril;
-    color: $color-green;
-    padding: .5rem 0;
-    font-size: 1.55rem;
+    @include flex-center;
+    color: $color-white;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1.7rem;
+    opacity: 80%;
+    // background-color: $color-tuna
   }
   &__button-container{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    opacity: 70%;
   }
   &__button {
     @include flex-center;
-    padding: 2.5rem;
-    margin: .5rem 0;
+    @include font-light;
+    background-color: $color-tuna;
+    color: $color-white;
+    padding: 1.5rem;
+    margin: 1rem 2rem;
     font-size: 1.25rem;
+    border: none;
+    border-radius: 4px;
   }
 }

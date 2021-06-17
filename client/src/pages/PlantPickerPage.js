@@ -1,42 +1,286 @@
 import Nav from "../components/Nav/Nav";
-import { Component } from "react";
+import { Component, useState, useEffect } from "react";
+import StepWizard from "react-step-wizard";
+import { Link } from "react-router-dom";
+
 
 import "./PlantPickerPage.scss";
+import axios from "axios";
+ 
 
 class PlantPickerPage extends Component {
   state = {
-    //isLoggedIn: true,
-    "watering" : "",
-    "difficulty": "",
-    "toxicDogs": false,
-    "toxicCats": false,
-    "light": "" ,
-    "size":"",
+    difficulty : "",
+    pets : "",
+    size: "",
+    light: "",
+    watering : "",
+    //isLoggedIn: "true"
+    displayPickedPlants: false,
   };
 
-  componentDidMount() {
-
+  changeDifficultyState = (updatedDifficulty) => {
+    console.log(updatedDifficulty);
+    this.setState({
+      difficulty: updatedDifficulty
+    })
   }
 
-  
-  
+  changePetState = (updatedPets) => {
+    console.log(updatedPets);
+    this.setState({
+      pets: updatedPets
+    })
+  }
 
- render() {
-   console.log(this.state.plants)
-  return (
-    <>
-      <Nav/>
-        <div className="plantPicker">
-        <h2 className="plantPicker__header">How much plant experience do you have?</h2>
-          <div className="plantPicker__button-container">
-            <button className="plantPicker__button">Beginner</button>
-            <button className="plantPicker__button">Medium</button>
-            <button className="plantPicker__button">Advanced</button>
-        </div>
-    </div>
-    </>
+  changeSizeState = (updatedSize) => {
+    console.log(updatedSize);
+    this.setState({
+      size: updatedSize
+    })
+  }
+
+  changeLightState = (updatedLight) => {
+    console.log(updatedLight);
+    this.setState({
+      light: updatedLight
+    })
+  }
+
+  changeWaterState = (updatedWater) => {
+    console.log(updatedWater);
+    this.setState({
+      watering: updatedWater
+    })
+  }
+  
+  postState = () => {
+    console.log(this.state);
+    axios
+      .post("http://localhost:8080/api/plantPicker", {
+        difficulty : this.state.difficulty,
+        pets : this.state.pets,
+        size : this.state.size,
+        light : this.state.light,
+        watering: this.state.watering,
+       // isLoggedIn: this.state.isLoggedIn,
+    })
+    .then((response) => {
+      console.log(response)
+      this.setState({
+        displayPickedPlants: true,
+        pickedPlants: response.data
+      })
+    })
+    .catch((error => {
+      console.log(error)
+    }))
+    
+  }
+
+  render() {
+    if (this.state.displayPickedPlants) {
+      return (
+        <>
+          <Nav/>
+          <h1 className="plantPicker__title">Here's your plant suggestions:</h1> 
+            <article className="plantCard">
+              <Link className="plantCard__link" key={this.state.pickedPlants.id} to={"/allPlants/" + this.state.pickedPlants.id}>
+              <div className="plantCard__container">
+                <div className="plantCard__left"></div>
+                <div className="plantCard__right">
+                  <h3 className="plantCard__heading">{this.state.pickedPlants.commonName}</h3>
+                    <div className="plantCard__subheadings">
+                     <h5 className="plantCard__details">Difficulty: {this.state.pickedPlants.difficulty}</h5>
+                     <h5 className="plantCard__details"> Size: {this.state.pickedPlants.id}</h5>
+                    </div>
+                </div>
+                </div>
+              </Link>
+            </article> 
+        </>
+      )
+    }
+
+    return (
+      <>
+        <Nav/>
+        <StepWizard >
+          <StepOne changeDifficultyState={this.changeDifficultyState} />
+          <StepTwo changePetState={this.changePetState}/>
+          <StepThree changeSizeState={this.changeSizeState}/>
+          <StepFour changeLightState={this.changeLightState}/>
+          <StepFive changeWaterState={this.changeWaterState} />
+          <StepSix postState={this.postState}/>
+        </StepWizard>
+      </>
+    )
+  }
+}
+
+
+const StepOne = (props) => {
+  const { currentStep, nextStep } = useState();
+  console.log(props)
+
+  const handleClick = (difficulty) => {
+    props.nextStep();
+    props.changeDifficultyState(difficulty);
+  }
+
+  return(
+  <div className="plantPicker">
+    <h2 className="plantPicker__header">{currentStep}What experience level do you have?</h2>
+      <div className="plantPicker__button-container">
+        <button 
+          className="plantPicker__button"
+          onClick={()=> {handleClick("beginner")}}>Beginner</button>
+        <button 
+          className="plantPicker__button"
+          onClick={() => {handleClick("medium")}}>Medium</button>
+        <button 
+          className="plantPicker__button"
+          onClick={() => {handleClick("expert")}}>Pro</button>
+      </div>
+  </div>
   )
 }
+
+const StepTwo = (props) => {
+  const { currentStep, nextStep } = useState();
+  console.log(props)
+
+  const handleClick = (pets) => {
+    props.nextStep();
+    props.changePetState(pets);
+  }
+  
+  return(
+    <div className="plantPicker">
+      <h2 className="plantPicker__header">{currentStep}Do you have pets?</h2>
+        <div className="plantPicker__button-container">
+          <button 
+            className="plantPicker__button"
+            onClick={()=> {handleClick("dogs")}}>Doggos</button>
+          <button 
+            className="plantPicker__button"
+            onClick={() => {handleClick("cats")}}>Cats</button>
+          <button 
+            className="plantPicker__button"
+            onClick={() => {handleClick("none")}}>Only more plants</button>
+        </div>
+    </div>
+    )
+
 }
+
+const StepThree = (props) => {
+  const { currentStep, nextStep } = useState();
+  console.log(props)
+
+  const handleClick = (size) => {
+    props.nextStep();
+    props.changeSizeState(size);
+  }
+
+  return(
+    <div className="plantPicker">
+      <h2 className="plantPicker__header">{currentStep}What size plant are you looking for?</h2>
+        <div className="plantPicker__button-container">
+          <button 
+            className="plantPicker__button"
+            onClick={()=> {handleClick("small")}}>Small</button>
+          <button 
+            className="plantPicker__button"
+            onClick={() => {handleClick("medium")}}>Medium</button>
+          <button 
+            className="plantPicker__button"
+            onClick={() => {handleClick("large")}}>Large</button>
+        </div>
+    </div>
+    )
+}
+
+const StepFour = (props) => {
+  const { currentStep, nextStep } = useState();
+  console.log(props)
+
+  const handleClick = (light) => {
+    props.nextStep();
+    props.changeLightState(light);
+  }
+  
+
+  return(
+    <div className="plantPicker">
+      <h2 className="plantPicker__header">{currentStep}What type of light will this plant live in?</h2>
+        <div className="plantPicker__button-container">
+          <button 
+            className="plantPicker__button"
+            onClick={()=> {handleClick("direct")}}>Direct sunlight a few hours a day</button>
+          <button 
+            className="plantPicker__button"
+            onClick={() => {handleClick("indirect")}}>Indirect sunlight, but in bright room for most of the day</button>
+          <button 
+            className="plantPicker__button"
+            onClick={() => {handleClick("minimal")}}>Minimal light, or not near any windows</button>
+        </div>
+    </div>
+    )
+}
+
+const StepFive = (props) => {
+  const { currentStep, nextStep } = useState();
+  console.log(props)
+
+  const handleClick = (watering) => {
+    props.nextStep();
+    props.changeWaterState(watering);
+  }
+  
+  return(
+    <div className="plantPicker">
+      <h2 className="plantPicker__header">{currentStep}How often do you want to water this plant?</h2>
+        <div className="plantPicker__button-container">
+          <button 
+            className="plantPicker__button"
+            onClick={()=> {handleClick("weekly")}}>About once a week</button>
+          <button 
+            className="plantPicker__button"
+            onClick={() => {handleClick("bi-weekly")}}>About once every two weeks </button>
+          <button 
+            className="plantPicker__button"
+            onClick={() => {handleClick("monthly")}}>About once a month</button>
+        </div>
+    </div>
+    )
+}
+
+const StepSix = (props) => {
+  const { currentStep, nextStep } = useState();
+  console.log(props)
+
+  const handleClick = () => {
+    props.postState();
+  }
+  
+  return(
+    <div className="plantPicker">
+      <h2 className="plantPicker__header">{currentStep}Ready for you dream plants?</h2>
+        <div className="plantPicker__button-container">
+          <button 
+            className="plantPicker__button"
+            onClick={handleClick}>YESSSSSS</button>
+          <button 
+            className="plantPicker__button"
+            onClick={handleClick}>I guess</button>
+          <button 
+            className="plantPicker__button"
+            onClick={handleClick}>Indoor gardening wizard here I come!</button>
+        </div>
+    </div>
+    )
+}
+
 
 export default PlantPickerPage;

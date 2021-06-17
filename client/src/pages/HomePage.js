@@ -13,8 +13,7 @@ class HomePage extends Component {
 //     event.preventDefault();
 
 //     axios
-//       .post("http://localhost:8080/api/users/register", {
-//         first_name: event.target.first_name.value,
+//       .post("http://localhost:8080/api/users/login", {
 //         password: event.target.password.value,
 //         email: event.target.email.value,
 //   })

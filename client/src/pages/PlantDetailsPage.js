@@ -35,21 +35,26 @@ class PlantDetailsPage extends Component {
        <div className="plantDetails">
         <div className="plantDetails__container">
           <div className="plantDetails__top-container">
-          <img src={image} alt={commonName}/>
-          <h2>{commonName}</h2>
-          <h3>Also known as {botanicalName}</h3>
+          <img className="plantDetails__image" src={`http://localhost:8080/${image}`} alt={commonName}/>
+          <div className="plantDetails__heading-container">
+            <h2 className="plantDetails__heading">{commonName}</h2>
+            <h3 className="plantDetails__sub-heading">Also known as {botanicalName}</h3>
+            <h4 className="plantDetails__title">Plant Details:</h4>
+            <p className="plantDetails__description">{description}</p>
           </div>
-          <p>{description}</p>
+          </div>
           <div className="plantDetails__sub-container">
-            <h4 className="plantDetails__details">Difficulty:  {difficulty}</h4>
-            <h4 className="plantDetails__details">Flowering: {flowering}</h4>
-            <h4 className="plantDetails__details">Toxic to Dogs: </h4>
-            <h4 className="plantDetails__details">Toxic to Cats: </h4>
-            <h4 className="plantDetails__details">Light: {light}</h4>
-            <h4 className="plantDetails__details">Perennial: {perennial}</h4>
-            <h4 className="plantDetails__details">Size: {size}</h4>
-            <p>{care}</p>
+            <h5 className="plantDetails__details">Difficulty:  {difficulty}</h5>
+            <h5 className="plantDetails__details">Flowering: {flowering}</h5>
+            <h5 className="plantDetails__details">Size: {size}</h5>
+          </div>
+          <div className="plantDetails__sub-container">
+            <h5 className="plantDetails__details">Toxic to Cats: </h5>
+            <h5 className="plantDetails__details">Toxic to Dogs: </h5>
+            <h5 className="plantDetails__details">Light: {light}</h5>
           </div> 
+          <h4 className="plantDetails__title">Care Tips:</h4>
+          <p className="plantDetails__description">{care}</p>
         </div>
        </div>
       </>

@@ -29,8 +29,8 @@ class Login extends Component {
 
     render() {
         return (
-            <main className="login-page">
-                <form className="login" onSubmit={this.handleSubmit}>
+            <main className="login">
+                <form className="login__form" onSubmit={this.handleSubmit}>
                     <h1 className="login__title">Log in</h1>
 
                     <Input type="text" name="email" label="Email" />
@@ -39,7 +39,7 @@ class Login extends Component {
                     <button className="login__button">Log in</button>
 
                     {this.state.error && <div className="login__message">{this.state.error}</div>}
-                    {this.state.success && <Redirect to="/" />}
+                    {this.state.success && <Redirect to="/allPlants" />}
                 </form>
                 <p>
                     Need an account? <Link to="/signUp">Sign up</Link>

@@ -1,0 +1,17 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/variables' as *;
+
+.field{
+  display: flex;
+  flex-direction: column;
+  padding: .5rem 1rem;
+  &__label{
+    @include margin-auto;
+    @include flex-center;
+    padding-bottom: 4px;
+  }
+  &__input {
+    @include margin-auto;
+    @include flex-center;
+  }
+}

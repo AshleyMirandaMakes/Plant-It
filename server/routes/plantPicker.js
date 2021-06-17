@@ -20,12 +20,17 @@ router
   const plants = pickerTest();
   const { difficulty, pets, size, light, watering } = req.body;
 
-  console.log(req.body)
+  // console.log(req.body)
+  // if (plant.pets === "dogs") {
+  //   plants.filter(plants.pets === "dog");
+  // }
+  //something like this
+
 
   const foundPlant = plants.find((plant) => {
     if (
       difficulty === plant.difficulty &&
-      pets === plant.pets &&
+      pets === plant.pets && //ugh i dunno
       size === plant.size &&
       light === plant.light &&
       watering === plant.watering

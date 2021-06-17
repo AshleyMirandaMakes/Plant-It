@@ -1,27 +1,40 @@
+import axios from "axios";
 import { Component } from "react";
+import Nav from "../components/Nav/Nav";
 
 import './PlantDetailsPage.scss';
 
-function PlantDetailsPage (props){
-  const {
-    id,
-    commonName,
-    difficulty,
-    size,
+class PlantDetailsPage extends Component {
+  state ={
+    currentPlant: "",
+  }
     
-  } = props.plantDetails;
-    
-    console.log();
-    return (
-      
+  componentDidMount() {
+    const {id} = this.props.match.params;
+  
+  axios
+    .get(`http://localhost:8080/api/allPlants/${id}`)
+    .then((response) => {
+      this.setState({
+        currentPlant: response.data
+      })
+    })
+    .catch((error => {
+      console.log(error)
+    }))
+  }
 
-      <li className="plantDetails__container">
-        {/* <img className="plantDetails__image" src={image} alt={title} /> */}
-        <div className="plantDetails__headings">
-          <h3 className="plantDetails__title">{commonName}</h3> 
-        </div>
-      </li>
+  render (){
+    console.log(this.state.currentPlant); // ADD IMAGES
+    const { commonName, botanicalName, description, difficulty, flowering, light, perennial, size, care } = this.state.currentPlant;
+    console.log(commonName)
+    
+    return (
+      <>
+       <Nav/>
+      </>
     );
+  }
 } 
 
 export default PlantDetailsPage; 

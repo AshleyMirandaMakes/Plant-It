@@ -41,6 +41,7 @@ router.post("/signUp", (req, res) => {
       firstName, 
       email,
       password: hashedPassword,
+      favoritePlants: []
       }
       
       //push into users array
@@ -91,9 +92,21 @@ router.post("/login", (req, res ) => {
 
   res.json({ token });
   }}
-  
 )});
 
+router.get("/current", (req, res) => {
+  //you need to figure this out next.
+  User.where({ id: req.decoded.id })
+      .fetch()
+      .then((user) => {
+          delete user.attributes.password;
+
+          res.json(user.attributes);
+      })
+      .catch((error) => {
+          res.status(500).send("Unable to find user");
+      });
+});
 
 
 

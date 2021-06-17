@@ -17,23 +17,27 @@ router
   // })
 
   .post("/", (req, res) => {
-  const plants = pickerTest();
-  const { difficulty, pets, size, light, watering } = req.body;
+  const plants = loadPlants();
+  const { difficulty, size, light, watering, safeForDogs, safeForCats } = req.body;
 
-  // console.log(req.body)
-  // if (plant.pets === "dogs") {
-  //   plants.filter(plants.pets === "dog");
-  // }
-  //something like this
+  // const dogSafePlants = 
+
+
+  // const dogSafePlants = plants.find((plant) => {
+  //   if (
+  //     toxicToDogs === 
+  //   ) 
+  // }) 
 
 
   const foundPlant = plants.find((plant) => {
     if (
       difficulty === plant.difficulty &&
-      pets === plant.pets && //ugh i dunno
       size === plant.size &&
       light === plant.light &&
-      watering === plant.watering
+      watering === plant.watering &&
+      safeForDogs === plant.safeForDogs &&
+      safeForCats === plant.safeForCats
       ) {
       return true;
     } else {

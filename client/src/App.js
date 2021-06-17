@@ -16,7 +16,6 @@ function App() {
     <div className="App">
         <Router>
       <Switch>
-        {/* <Route path="/" component={HomePage} exact /> */}
         <Route path="/" component={LoginPage} exact />
         <Route path="/main" component={MainPage} exact/>
         <Route path="/plantPicker" component={PlantPickerPage} exact/>

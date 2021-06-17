@@ -39,7 +39,7 @@ class Login extends Component {
                     <button className="login__button">Log in</button>
 
                     {this.state.error && <div className="login__message">{this.state.error}</div>}
-                    {this.state.success && <Redirect to="/allPlants" />}
+                    {this.state.success && <Redirect to="/main" />}
                 </form>
                 <p>
                     Need an account? <Link to="/signUp">Sign up</Link>

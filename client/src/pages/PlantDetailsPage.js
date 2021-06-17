@@ -32,6 +32,9 @@ class PlantDetailsPage extends Component {
     return (
       <>
        <Nav/>
+       <div className="plantDetails__container">
+         
+       </div>
       </>
     );
   }

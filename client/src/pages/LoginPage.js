@@ -33,8 +33,8 @@ class Login extends Component {
                 <form className="login__form" onSubmit={this.handleSubmit}>
                     <h1 className="login__title">Log in</h1>
 
-                    <Input type="text" name="email" label="Email" />
-                    <Input type="password" name="password" label="Password" />
+                    <Input type="text" name="email" label="Email" placeholder="" />
+                    <Input type="password" name="password" label="Password" placeholder="" />
 
                     <button className="login__button">Log in</button>
 

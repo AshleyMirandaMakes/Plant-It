@@ -32,11 +32,8 @@ router.post("/signUp", (req, res) => {
   bcrypt 
     .hash(password, 6)
     .then((hashedPassword) => {
-      console.log(hashedPassword);
-      console.log("cats");
       //load the users json file
       const users = loadUsers();
-      console.log("users", users);
       
       //take the new user data, and create a new user w/ id
       const newUser = {
@@ -59,6 +56,7 @@ router.post("/signUp", (req, res) => {
 
 router.post("/login", (req, res ) => {
   const {email , password } = req.body;
+  console.log(req.body);
 
     //if any fields are missing, return
   if (!email || !password) {
@@ -67,38 +65,33 @@ router.post("/login", (req, res ) => {
 
   //load json file
   const users = loadUsers();
-  console.log(users)
-  
+ 
+  //assign the req.body to a value
+  currentUser = req.body;
 
   users.find((user) => {
-    if (user.email === email) {
-      const token = jwt.sign(
-        { id: user.id, email: user.attributes.email },
-        process.env.JWT_SECRET,
-        { expiresIn: "24h" }
-      );
+    if (user.email === currentUser.email) {
+      console.log(user.password)
+      const passwordsMatch = bcrypt.compareSync(
+        currentUser.password,
+        user.password
+    );
 
-      res.json({ token });
-    }
+    //if passwords don't match
+    if (!passwordsMatch) {
+      return res.status(400).send("Invalid password");
   }
 
-  // .then((user) => {
-  //   console.log(user)
-  //   const correctPassword = bcrypt.compareSync(password, user.attributes.password);  
-  
-  //   if (!correctPassword) return res.status(400).send("Invalid password");
+    // if they match, create a JWT and return in the response
+    const token = jwt.sign(
+      { id: user.id, email: user.email },
+      process.env.JWT_SECRET, 
+      { expiresIn: "1h" }
+  );
 
-  //     const token = jwt.sign(
-  //       { id: user.id, email: user.attributes.email },
-  //       process.env.JWT_SECRET,
-  //       { expiresIn: "24h" }
-  //     );
-
-  //   res.json({ token });
+  res.json({ token });
+  }}
   
-  // })
-  // .catch(() => res.status(400).send("Invalid credentials"))
-  // )
 )});
 
 

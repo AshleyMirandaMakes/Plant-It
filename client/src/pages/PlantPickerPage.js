@@ -12,8 +12,8 @@ class PlantPickerPage extends Component {
     size: "",
     light: "",
     watering : "",
-    safeForDogs : true,
-    safeForCats : true,
+    safeForDogs : false,
+    safeForCats : false,
     //isLoggedIn: "true"
     displayPickedPlants: false,
   };
@@ -68,8 +68,8 @@ class PlantPickerPage extends Component {
         size : this.state.size,
         light : this.state.light,
         watering: this.state.watering,
-        safeForDogs : this.state.dogs,
-        safeForCats : this.state.cats,
+        safeForDogs : this.state.safeForDogs,
+        safeForCats : this.state.safeForCats,
        // isLoggedIn: this.state.isLoggedIn,
     })
     .then((response) => {
@@ -250,9 +250,9 @@ const StepFive = (props) => {
   const { currentStep, nextStep } = useState();
   console.log(props)
 
-  const handleClick = (toxicToDogs) => {
+  const handleClick = (safeForDogs) => {
     props.nextStep();
-    props.changeDogState(toxicToDogs);
+    props.changeDogState(safeForDogs);
   }
   
   return(
@@ -261,10 +261,10 @@ const StepFive = (props) => {
         <div className="plantPicker__button-container">
           <button 
             className="plantPicker__button"
-            onClick={()=> {handleClick(false)}}>Yes, please</button>
+            onClick={()=> {handleClick(true)}}>Yes, please</button>
           <button 
             className="plantPicker__button"
-            onClick={() => {handleClick(true)}}>No thanks</button>
+            onClick={() => {handleClick(false)}}>No thanks</button>
         </div>
     </div>
     )
@@ -274,9 +274,9 @@ const StepSix = (props) => {
   const { currentStep, nextStep } = useState();
   console.log(props)
 
-  const handleClick = (toxicToCats) => {
+  const handleClick = (safeForCats) => {
     props.nextStep();
-    props.changeCatState(toxicToCats);
+    props.changeCatState(safeForCats);
   }
   
   return(
@@ -285,10 +285,10 @@ const StepSix = (props) => {
         <div className="plantPicker__button-container">
           <button 
             className="plantPicker__button"
-            onClick={()=> {handleClick(false)}}>Yes, please</button>
+            onClick={()=> {handleClick(true)}}>Yes, please</button>
           <button 
             className="plantPicker__button"
-            onClick={() => {handleClick(true)}}>No thanks</button>
+            onClick={() => {handleClick(false)}}>No thanks</button>
         </div>
     </div>
     )

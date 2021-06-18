@@ -18,7 +18,9 @@ router
 
   .post("/", (req, res) => {
   const plants = loadPlants();
+  console.log(req.body);
   const { difficulty, size, light, watering, safeForDogs, safeForCats } = req.body;
+  
 
   // const dogSafePlants = 
 

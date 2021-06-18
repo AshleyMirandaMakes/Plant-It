@@ -19,49 +19,42 @@ class PlantPickerPage extends Component {
   };
 
   changeDifficultyState = (updatedDifficulty) => {
-    console.log(updatedDifficulty);
     this.setState({
       difficulty: updatedDifficulty
     })
   }
 
   changeSizeState = (updatedSize) => {
-    console.log(updatedSize);
     this.setState({
       size: updatedSize
     })
   }
 
   changeLightState = (updatedLight) => {
-    console.log(updatedLight);
     this.setState({
       light: updatedLight
     })
   }
 
   changeWaterState = (updatedWater) => {
-    console.log(updatedWater);
     this.setState({
       watering: updatedWater
     })
   }
   
   changeDogState = (updatedDog) => {
-    console.log(updatedDog);
     this.setState({
       safeForDogs: updatedDog
     })
   }
 
   changeCatState = (updatedCat) => {
-    console.log(updatedCat);
     this.setState({
       safeForCats: updatedCat
     })
   }
 
   postState = () => {
-    console.log(this.state);
     axios
       .post("http://localhost:8080/api/plantPicker", {
         difficulty : this.state.difficulty,
@@ -73,7 +66,6 @@ class PlantPickerPage extends Component {
        // isLoggedIn: this.state.isLoggedIn,
     })
     .then((response) => {
-      console.log(response)
       this.setState({
         displayPickedPlants: true,
         pickedPlants: response.data
@@ -112,14 +104,6 @@ class PlantPickerPage extends Component {
     return (
       <>
         <Nav/>
-        {/* <StepWizard >
-          <StepOne changeDifficultyState={this.changeDifficultyState} />
-          <StepTwo changePetState={this.changePetState}/>
-          <StepThree changeSizeState={this.changeSizeState}/>
-          <StepFour changeLightState={this.changeLightState}/>
-          <StepFive changeWaterState={this.changeWaterState} />
-          <StepSix postState={this.postState}/>
-        </StepWizard> */}
          <StepWizard >
           <StepOne changeDifficultyState={this.changeDifficultyState} />
           <StepTwo changeSizeState={this.changeSizeState}/>
@@ -137,7 +121,6 @@ class PlantPickerPage extends Component {
 
 const StepOne = (props) => {
   const { currentStep, nextStep } = useState();
-  console.log(props)
 
   const handleClick = (difficulty) => {
     props.nextStep();
@@ -165,7 +148,6 @@ const StepOne = (props) => {
 
 const StepTwo = (props) => {
   const { currentStep, nextStep } = useState();
-  console.log(props)
 
   const handleClick = (size) => {
     props.nextStep();
@@ -192,7 +174,6 @@ const StepTwo = (props) => {
 
 const StepThree = (props) => {
   const { currentStep, nextStep } = useState();
-  console.log(props)
 
   const handleClick = (light) => {
     props.nextStep();
@@ -220,7 +201,6 @@ const StepThree = (props) => {
 
 const StepFour = (props) => {
   const { currentStep, nextStep } = useState();
-  console.log(props)
 
   const handleClick = (watering) => {
     props.nextStep();
@@ -248,7 +228,6 @@ const StepFour = (props) => {
 
 const StepFive = (props) => {
   const { currentStep, nextStep } = useState();
-  console.log(props)
 
   const handleClick = (safeForDogs) => {
     props.nextStep();
@@ -272,8 +251,6 @@ const StepFive = (props) => {
 
 const StepSix = (props) => {
   const { currentStep, nextStep } = useState();
-  console.log(props)
-
   const handleClick = (safeForCats) => {
     props.nextStep();
     props.changeCatState(safeForCats);
@@ -296,8 +273,6 @@ const StepSix = (props) => {
 
 const StepSeven = (props) => {
   const { currentStep, nextStep } = useState();
-  console.log(props)
-
   const handleClick = () => {
     props.postState();
   }

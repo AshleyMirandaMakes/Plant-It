@@ -17,9 +17,11 @@ class MainPage extends Component {
         return this.setState({ isLoggedIn: false });
     }
 
+
+
     // Get the data from the API
   axios
-    .get("http://localhost:8080/api/users/current", {
+    .get("http://localhost:8080/api/currentUser", {
       headers: {
         Authorization: `Bearer ${token}`,
             },
@@ -27,6 +29,7 @@ class MainPage extends Component {
         .then((response) => {
             this.setState({
                 user: response.data,
+                isLoggedIn : true
             });
         })
         .catch((error) => {

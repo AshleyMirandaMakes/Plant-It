@@ -70,9 +70,9 @@ router.post("/login", (req, res ) => {
   //assign the req.body to a value
   currentUser = req.body;
 
+  //try to find that user
   users.find((user) => {
     if (user.email === currentUser.email) {
-      console.log(user.password)
       const passwordsMatch = bcrypt.compareSync(
         currentUser.password,
         user.password
@@ -91,22 +91,14 @@ router.post("/login", (req, res ) => {
   );
 
   res.json({ token });
-  }}
-)});
-
-router.get("/current", (req, res) => {
-  //you need to figure this out next.
-  User.where({ id: req.decoded.id })
-      .fetch()
-      .then((user) => {
-          delete user.attributes.password;
-
-          res.json(user.attributes);
-      })
-      .catch((error) => {
-          res.status(500).send("Unable to find user");
-      });
+  }})
+  // .catch((error) => {
+  //   res.status(400).send("Invalid Credentials", error);
+  // });
 });
+
+
+
 
 
 

@@ -28,6 +28,7 @@ class Login extends Component {
     };
 
     render() {
+        console.log(this.state.success)
         return (
             <main className="login">
                 <form className="login__form" onSubmit={this.handleSubmit}>

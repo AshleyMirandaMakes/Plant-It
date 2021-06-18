@@ -3,9 +3,11 @@ const cors = require("cors");
 const app = express();
 const signUpRoute = require("./routes/users");
 const loginRoute = require("./routes/users");
+const currentRoute = require("./routes/currentUser");
 const allPlantsRoute = require("./routes/allPlants");
 const plantPickerRoute = require("./routes/plantPicker");
 const favoritePlantsRoute = require("./routes/favoritePlants");
+const authorize = require("./middleware/authorize"); //check path/ create folder
 
 
 // Configuration
@@ -38,6 +40,8 @@ app.use((req, res, next) => {
 // Routes
 app.use("/api/users", signUpRoute);
 app.use("api/users", loginRoute);
+app.use(authorize);
+app.use("/api/currentUser", currentRoute);
 app.use("/api/allPlants", allPlantsRoute); 
 app.use("/api/plantPicker", plantPickerRoute);
 app.use("/api/favoritePlants", favoritePlantsRoute);

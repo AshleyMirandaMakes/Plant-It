@@ -6,26 +6,50 @@ import './PlantDetailsPage.scss';
 
 class PlantDetailsPage extends Component {
   state ={
+    isLoggedIn: false,
+    user: null,
     currentPlant: "",
   }
     
   componentDidMount() {
     const {id} = this.props.match.params;
+
+    const token = sessionStorage.getItem("token");
+
+    if (!token) {
+        return this.setState({ isLoggedIn: false });
+    }
   
   axios
-    .get(`http://localhost:8080/api/allPlants/${id}`)
+    .get(`http://localhost:8080/api/allPlants/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+            },
+          })
     .then((response) => {
       this.setState({
-        currentPlant: response.data
+        currentPlant: response.data,
+        user: response.data,
+        isLoggedIn : true
       })
     })
     .catch((error => {
+      this.setState({
+        isLoggedIn: false,
+    });
       console.log(error)
     }))
   }
 
   render (){
-    console.log(this.state.currentPlant); 
+    if (!this.state.user) {
+      return (
+          <main className="mainPage">
+              <p className="mainPage__title">Loading...</p>
+          </main>
+      );
+    }
+    //console.log(this.state.currentPlant); 
     const { commonName, botanicalName, description, image, difficulty, flowering, light, perennial, size, care } = this.state.currentPlant;
     console.log(commonName)
     

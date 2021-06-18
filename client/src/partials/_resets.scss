@@ -16,7 +16,7 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  //border: 1px solid lavender;
+  border: 1px solid lavender;
 }
 
 Link {
@@ -26,8 +26,7 @@ Link {
 
 body {
   @include font-light;
-  // color: $color-black;
-  // background: $color-lightgray;
+  color: $color-baltic-sea;
 }
 
 // h1 {

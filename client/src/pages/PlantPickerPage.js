@@ -14,9 +14,38 @@ class PlantPickerPage extends Component {
     watering : "",
     safeForDogs : false,
     safeForCats : false,
-    //isLoggedIn: "true"
     displayPickedPlants: false,
+    // user
+    isLoggedIn: false,
+    user: null,
   };
+
+  componentDidMount() {
+    const token = sessionStorage.getItem("token");
+
+    if (!token) {
+        return this.setState({ isLoggedIn: false });
+    }
+
+    // Get the data from the API
+  axios
+    .get("http://localhost:8080/api/currentUser", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+            },
+        })
+        .then((response) => {
+            this.setState({
+                user: response.data,
+                isLoggedIn : true
+            });
+        })
+        .catch((error) => {
+            this.setState({
+                isLoggedIn: false,
+            });
+        });
+      }
 
   changeDifficultyState = (updatedDifficulty) => {
     this.setState({
@@ -55,6 +84,17 @@ class PlantPickerPage extends Component {
   }
 
   postState = () => {
+    const token = sessionStorage.getItem("token");
+
+    if (!token) {
+        return this.setState({ isLoggedIn: false });
+    }
+
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    }
+
+
     axios
       .post("http://localhost:8080/api/plantPicker", {
         difficulty : this.state.difficulty,
@@ -63,8 +103,10 @@ class PlantPickerPage extends Component {
         watering: this.state.watering,
         safeForDogs : this.state.safeForDogs,
         safeForCats : this.state.safeForCats,
-       // isLoggedIn: this.state.isLoggedIn,
-    })
+       
+        //isLoggedIn: true,
+    }, { headers: headers
+          })
     .then((response) => {
       this.setState({
         displayPickedPlants: true,
@@ -78,6 +120,8 @@ class PlantPickerPage extends Component {
   }
 
   render() {
+    console.log(this.state.user)
+    console.log(this.state.displayPickedPlants)
     if (this.state.displayPickedPlants) {
       return (
         <>
@@ -123,6 +167,7 @@ const StepOne = (props) => {
   const { currentStep, nextStep } = useState();
 
   const handleClick = (difficulty) => {
+    console.log(difficulty)
     props.nextStep();
     props.changeDifficultyState(difficulty);
   }
@@ -150,6 +195,7 @@ const StepTwo = (props) => {
   const { currentStep, nextStep } = useState();
 
   const handleClick = (size) => {
+    console.log(size)
     props.nextStep();
     props.changeSizeState(size);
   }
@@ -176,6 +222,7 @@ const StepThree = (props) => {
   const { currentStep, nextStep } = useState();
 
   const handleClick = (light) => {
+    console.log(light)
     props.nextStep();
     props.changeLightState(light);
   }
@@ -203,6 +250,7 @@ const StepFour = (props) => {
   const { currentStep, nextStep } = useState();
 
   const handleClick = (watering) => {
+    console.log(watering)
     props.nextStep();
     props.changeWaterState(watering);
   }
@@ -230,6 +278,7 @@ const StepFive = (props) => {
   const { currentStep, nextStep } = useState();
 
   const handleClick = (safeForDogs) => {
+    console.log(safeForDogs)
     props.nextStep();
     props.changeDogState(safeForDogs);
   }
@@ -252,6 +301,7 @@ const StepFive = (props) => {
 const StepSix = (props) => {
   const { currentStep, nextStep } = useState();
   const handleClick = (safeForCats) => {
+    console.log(safeForCats)
     props.nextStep();
     props.changeCatState(safeForCats);
   }

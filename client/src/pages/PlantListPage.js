@@ -1,37 +1,58 @@
 import Nav from "../components/Nav/Nav";
 import PlantCard from "../components/PlantCard/PlantCard"
 import { Component } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
-
 import './PlantListPage.scss';
 
 class PlantListPage extends Component {
   state = {
-    //isLoggedIn: true,
+    isLoggedIn: false,
+    user: null,
     plants: [],
-    //selectedPlant: "",
   };
 
 
-  getPlants() {
+  componentDidMount() {
+    const token = sessionStorage.getItem("token");
+
+    if (!token) {
+        return this.setState({ isLoggedIn: false });
+    }
+
     axios
-      .get(`http://localhost:8080/api/allPlants`)
+      .get(`http://localhost:8080/api/allPlants`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+              },
+            })
       .then((response) => {
         this.setState({
           plants: response.data,
+          user: response.data,
+          isLoggedIn : true
         });
-      })
-      .catch((err) => console.error(err));
-  }
-
-  componentDidMount() {
-    this.getPlants();
-  }
+    })
+    .catch((error) => {
+        this.setState({
+            isLoggedIn: false,
+        });
+        console.error(error) 
+    });
+  };
   
 
  render() {
-   console.log(this.state.plants)
+  if (!this.state.user) {
+    return (
+        <main className="mainPage">
+            <p className="mainPage__title">Loading...</p>
+        </main>
+    );
+  }
+
+  // console.log(this.state.plants)
+  // console.log(this.state.user)
+
   return (
     <div className="plantList">
     <Nav/>
@@ -47,7 +68,8 @@ class PlantListPage extends Component {
           ))}
     </div>
   )
-}
+    }
+
 }
 
 export default PlantListPage;

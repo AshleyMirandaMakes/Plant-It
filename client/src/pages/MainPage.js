@@ -40,16 +40,6 @@ class MainPage extends Component {
 }
 
   render () {
-  //   if (!this.state.isLoggedIn) {
-  //     return (
-  //         <main className="dashboard">
-  //             <p>
-  //                 You must be logged in to see this page. <Link to="/login">Log in</Link>
-  //             </p>
-  //         </main>
-  //     );
-  // }
-
   if (!this.state.user) {
       return (
           <main className="dashboard">

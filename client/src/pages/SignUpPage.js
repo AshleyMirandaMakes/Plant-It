@@ -32,6 +32,7 @@ class Signup extends Component {
   render() {
     return (
       <main className="signup">
+        <section className="signup__container">
         <form className="signup__form" onSubmit={this.handleSubmit}>
           <h1 className="signup__title">Sign up</h1>
             <Input type="text" name="firstName" label="FirstName" />
@@ -42,9 +43,10 @@ class Signup extends Component {
             {this.state.success && <div className="signup__message">Signed up!</div>}
             {this.state.error && <div className="signup__message">{this.state.error}</div>}
         </form>
-          <p>
+          <p className="signup__details">
             Have an account? <Link to="/">Log in</Link>
           </p>
+          </section>
             </main>
         );
     }

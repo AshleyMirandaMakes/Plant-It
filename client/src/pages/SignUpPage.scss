@@ -1,0 +1,48 @@
+@use '../partials/mixins' as *;
+@use '../partials/variables' as *;
+@use '../partials/resets' as *;
+
+.signup {
+  width: 100%;
+  min-height: 500px;
+  background-image: url('../assets/images/backgrounds/zz-leaves-annie-spratt.jpg');
+  background-size: cover;
+  background-position: 100% 0%;
+  //background-color: $color-baltic-sea;
+  &__container { 
+    @include margin-auto;
+    width: 100%; 
+    max-width: 350px;
+  }
+  &__heading {
+    @include font-abril;
+    @include flex-center;
+    color: $color-pink; // maybe tuna
+    margin-top: 5rem;
+    padding-bottom: .5rem;
+  }
+  &__form{
+    @include margin-auto;
+    width: 100%;
+  }
+  &__title {
+    @include flex-center;
+    color: $color-tuna;
+    padding-bottom: .5rem;
+    padding-top: 2rem;
+  }
+  &__button {
+    @include flex-center;
+    @include margin-auto;
+    background-color: $color-pink;
+    color: $color-white;
+    padding: .25rem 1rem;
+    border: 0px;
+    border-radius: 4px;
+  }
+  &__details {
+    @include flex-center;
+    @include margin-auto;
+    margin-top: 1.5rem;
+  }
+}

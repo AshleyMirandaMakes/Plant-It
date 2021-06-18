@@ -1,0 +1,83 @@
+@use '../partials/mixins' as *;
+@use '../partials/variables' as *;
+@use '../partials/resets' as *;
+
+.plantDetails{
+  width: 100%;
+  &__container {
+    width: 100%;
+    padding: 1rem;
+    @include mid-mobile{
+      @include margin-auto;
+      max-width: 500px;
+    }
+    @include tablet {
+      @include margin-auto;
+      max-width: 1000px;
+      padding: 1rem 2rem;
+    }
+  }
+  &__top-container {
+    width: 100%;
+    @include mid-mobile{
+      @include margin-auto;
+      max-width: 500px;
+    }
+    @include tablet {
+      @include margin-auto;
+      max-width: 1000px;
+      display: flex;
+    }
+  }
+  &__image {
+    @include margin-auto;
+    @include flex-center;
+    width: 275px;
+    height: 275px;
+    border-radius: 50%;
+    @include mid-mobile{
+      @include margin-auto;
+      width: 350px;
+      height: 350px;
+    }
+    @include tablet {
+      @include margin-auto;
+      width: 300px;
+      height: 300px;
+      margin: 1rem;
+    }
+  }
+  &__heading{
+    @include flex-center;
+    padding: .5rem;
+  }
+  &__sub-heading{
+    @include flex-center;
+    padding: .5rem;
+  }
+  &__title{
+    @include flex-center;
+    padding: .5rem;
+  }
+  &__description{
+    padding: 1rem 0;
+    line-height: 1.05rem;
+    @include tablet {
+      @include margin-auto;
+      padding: 1rem;
+    }
+  }
+  &__sub-container {
+    display: flex;
+    justify-content: space-between;
+    padding: .25rem 0;
+    @include tablet {
+      @include margin-auto;
+      padding: 0 2rem;
+    }
+  }
+  &__details {
+    font-size: .75rem;
+  }
+
+}

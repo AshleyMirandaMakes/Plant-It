@@ -6,34 +6,22 @@ function loadPlants() {
   return JSON.parse(fs.readFileSync("./data/plants.json"));
 }
 
-function pickerTest() {
-  return JSON.parse(fs.readFileSync("./data/plantPickerTest.json"));
-}
-
 router
-  // .get("/", (req, res ) => {
-  //   const plants = pickerTest();
-  //   res.json(plants);
-  // })
-
   .post("/", (req, res) => {
-  const plants = pickerTest();
-  const { difficulty, pets, size, light, watering } = req.body;
+  const plants = loadPlants();
+  console.log(req.body);
+  const { difficulty, size, light, watering, safeForDogs, safeForCats } = req.body;
 
-  // console.log(req.body)
-  // if (plant.pets === "dogs") {
-  //   plants.filter(plants.pets === "dog");
-  // }
-  //something like this
-
-
+  //I should probably consider that safeForCats/ safeForDogs only if it is clicked as true. if it's not false, I can render all plants, no? Come back to think thought later.
+  
   const foundPlant = plants.find((plant) => {
     if (
       difficulty === plant.difficulty &&
-      pets === plant.pets && //ugh i dunno
       size === plant.size &&
       light === plant.light &&
-      watering === plant.watering
+      watering === plant.watering &&
+      safeForDogs === plant.safeForDogs &&
+      safeForCats === plant.safeForCats
       ) {
       return true;
     } else {

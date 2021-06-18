@@ -2,8 +2,6 @@ import Nav from "../components/Nav/Nav";
 import { Component, useState, useEffect } from "react";
 import StepWizard from "react-step-wizard";
 import { Link } from "react-router-dom";
-
-
 import "./PlantPickerPage.scss";
 import axios from "axios";
  
@@ -11,62 +9,105 @@ import axios from "axios";
 class PlantPickerPage extends Component {
   state = {
     difficulty : "",
-    pets : "",
     size: "",
     light: "",
     watering : "",
-    //isLoggedIn: "true"
+    safeForDogs : false,
+    safeForCats : false,
     displayPickedPlants: false,
+    // user
+    isLoggedIn: false,
+    user: null,
   };
 
+  componentDidMount() {
+    const token = sessionStorage.getItem("token");
+
+    if (!token) {
+        return this.setState({ isLoggedIn: false });
+    }
+
+    // Get the data from the API
+  axios
+    .get("http://localhost:8080/api/currentUser", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+            },
+        })
+        .then((response) => {
+            this.setState({
+                user: response.data,
+                isLoggedIn : true
+            });
+        })
+        .catch((error) => {
+            this.setState({
+                isLoggedIn: false,
+            });
+        });
+      }
+
   changeDifficultyState = (updatedDifficulty) => {
-    console.log(updatedDifficulty);
     this.setState({
       difficulty: updatedDifficulty
     })
   }
 
-  changePetState = (updatedPets) => {
-    console.log(updatedPets);
-    this.setState({
-      pets: updatedPets
-    })
-  }
-
   changeSizeState = (updatedSize) => {
-    console.log(updatedSize);
     this.setState({
       size: updatedSize
     })
   }
 
   changeLightState = (updatedLight) => {
-    console.log(updatedLight);
     this.setState({
       light: updatedLight
     })
   }
 
   changeWaterState = (updatedWater) => {
-    console.log(updatedWater);
     this.setState({
       watering: updatedWater
     })
   }
   
+  changeDogState = (updatedDog) => {
+    this.setState({
+      safeForDogs: updatedDog
+    })
+  }
+
+  changeCatState = (updatedCat) => {
+    this.setState({
+      safeForCats: updatedCat
+    })
+  }
+
   postState = () => {
-    console.log(this.state);
+    const token = sessionStorage.getItem("token");
+
+    if (!token) {
+        return this.setState({ isLoggedIn: false });
+    }
+
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    }
+
+
     axios
       .post("http://localhost:8080/api/plantPicker", {
         difficulty : this.state.difficulty,
-        pets : this.state.pets,
         size : this.state.size,
         light : this.state.light,
         watering: this.state.watering,
-       // isLoggedIn: this.state.isLoggedIn,
-    })
+        safeForDogs : this.state.safeForDogs,
+        safeForCats : this.state.safeForCats,
+       
+        //isLoggedIn: true,
+    }, { headers: headers
+          })
     .then((response) => {
-      console.log(response)
       this.setState({
         displayPickedPlants: true,
         pickedPlants: response.data
@@ -79,6 +120,8 @@ class PlantPickerPage extends Component {
   }
 
   render() {
+    console.log(this.state.user)
+    console.log(this.state.displayPickedPlants)
     if (this.state.displayPickedPlants) {
       return (
         <>
@@ -105,14 +148,15 @@ class PlantPickerPage extends Component {
     return (
       <>
         <Nav/>
-        <StepWizard >
+         <StepWizard >
           <StepOne changeDifficultyState={this.changeDifficultyState} />
-          <StepTwo changePetState={this.changePetState}/>
-          <StepThree changeSizeState={this.changeSizeState}/>
-          <StepFour changeLightState={this.changeLightState}/>
-          <StepFive changeWaterState={this.changeWaterState} />
-          <StepSix postState={this.postState}/>
-        </StepWizard>
+          <StepTwo changeSizeState={this.changeSizeState}/>
+          <StepThree changeLightState={this.changeLightState}/>
+          <StepFour changeWaterState={this.changeWaterState} />
+          <StepFive changeDogState={this.changeDogState}/>
+          <StepSix changeCatState={this.changeCatState}/>
+          <StepSeven postState={this.postState}/>
+        </StepWizard> 
       </>
     )
   }
@@ -121,9 +165,9 @@ class PlantPickerPage extends Component {
 
 const StepOne = (props) => {
   const { currentStep, nextStep } = useState();
-  console.log(props)
 
   const handleClick = (difficulty) => {
+    console.log(difficulty)
     props.nextStep();
     props.changeDifficultyState(difficulty);
   }
@@ -146,39 +190,12 @@ const StepOne = (props) => {
   )
 }
 
+
 const StepTwo = (props) => {
   const { currentStep, nextStep } = useState();
-  console.log(props)
-
-  const handleClick = (pets) => {
-    props.nextStep();
-    props.changePetState(pets);
-  }
-  
-  return(
-    <div className="plantPicker">
-      <h2 className="plantPicker__header">{currentStep}Do you have pets?</h2>
-        <div className="plantPicker__button-container">
-          <button 
-            className="plantPicker__button"
-            onClick={()=> {handleClick("dogs")}}>Doggos</button>
-          <button 
-            className="plantPicker__button"
-            onClick={() => {handleClick("cats")}}>Cats</button>
-          <button 
-            className="plantPicker__button"
-            onClick={() => {handleClick("none")}}>Only more plants</button>
-        </div>
-    </div>
-    )
-
-}
-
-const StepThree = (props) => {
-  const { currentStep, nextStep } = useState();
-  console.log(props)
 
   const handleClick = (size) => {
+    console.log(size)
     props.nextStep();
     props.changeSizeState(size);
   }
@@ -201,11 +218,11 @@ const StepThree = (props) => {
     )
 }
 
-const StepFour = (props) => {
+const StepThree = (props) => {
   const { currentStep, nextStep } = useState();
-  console.log(props)
 
   const handleClick = (light) => {
+    console.log(light)
     props.nextStep();
     props.changeLightState(light);
   }
@@ -229,11 +246,11 @@ const StepFour = (props) => {
     )
 }
 
-const StepFive = (props) => {
+const StepFour = (props) => {
   const { currentStep, nextStep } = useState();
-  console.log(props)
 
   const handleClick = (watering) => {
+    console.log(watering)
     props.nextStep();
     props.changeWaterState(watering);
   }
@@ -256,10 +273,56 @@ const StepFive = (props) => {
     )
 }
 
+
+const StepFive = (props) => {
+  const { currentStep, nextStep } = useState();
+
+  const handleClick = (safeForDogs) => {
+    console.log(safeForDogs)
+    props.nextStep();
+    props.changeDogState(safeForDogs);
+  }
+  
+  return(
+    <div className="plantPicker">
+      <h2 className="plantPicker__header">{currentStep}Do you need dog-safe plants?</h2>
+        <div className="plantPicker__button-container">
+          <button 
+            className="plantPicker__button"
+            onClick={()=> {handleClick(true)}}>Yes, please</button>
+          <button 
+            className="plantPicker__button"
+            onClick={() => {handleClick(false)}}>No thanks</button>
+        </div>
+    </div>
+    )
+}
+
 const StepSix = (props) => {
   const { currentStep, nextStep } = useState();
-  console.log(props)
+  const handleClick = (safeForCats) => {
+    console.log(safeForCats)
+    props.nextStep();
+    props.changeCatState(safeForCats);
+  }
+  
+  return(
+    <div className="plantPicker">
+      <h2 className="plantPicker__header">{currentStep}Do you need cat-safe plants?</h2>
+        <div className="plantPicker__button-container">
+          <button 
+            className="plantPicker__button"
+            onClick={()=> {handleClick(true)}}>Yes, please</button>
+          <button 
+            className="plantPicker__button"
+            onClick={() => {handleClick(false)}}>No thanks</button>
+        </div>
+    </div>
+    )
+}
 
+const StepSeven = (props) => {
+  const { currentStep, nextStep } = useState();
   const handleClick = () => {
     props.postState();
   }

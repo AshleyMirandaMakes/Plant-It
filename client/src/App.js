@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import MainPage from "./pages/MainPage";
@@ -16,7 +15,6 @@ function App() {
     <div className="App">
         <Router>
       <Switch>
-        {/* <Route path="/" component={HomePage} exact /> */}
         <Route path="/" component={LoginPage} exact />
         <Route path="/main" component={MainPage} exact/>
         <Route path="/plantPicker" component={PlantPickerPage} exact/>

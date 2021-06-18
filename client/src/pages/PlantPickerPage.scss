@@ -5,9 +5,9 @@
 .plantPicker {
   width: 100%;
   //background-image: url('../assets/images/mosaic-background.jpg'); 
+  //background-size: cover;
   background-color: $color-moss;
   padding: 1rem;
-  background-size: cover;
   &__title {
     //@include flex-center;
     margin: 1rem;

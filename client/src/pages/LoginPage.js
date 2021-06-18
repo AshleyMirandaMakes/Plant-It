@@ -3,6 +3,7 @@ import { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import Input from "../components/Input/Input";
+import "./LoginPage.scss";
 
 class Login extends Component {
     state = {
@@ -28,22 +29,26 @@ class Login extends Component {
     };
 
     render() {
+        console.log(this.state.success)
         return (
-            <main className="login-page">
-                <form className="login" onSubmit={this.handleSubmit}>
-                    <h1 className="login__title">Log in</h1>
+            <main className="login">
+            <section className="login__container">
+            <h1 className="login__heading">Plant-It</h1>
+                <form className="login__form" onSubmit={this.handleSubmit}>
+                    <h2 className="login__title">Login to your account</h2>
 
-                    <Input type="text" name="email" label="Email" />
-                    <Input type="password" name="password" label="Password" />
+                    <Input type="text" name="email" label="Email" placeholder="" />
+                    <Input type="password" name="password" label="Password" placeholder="" />
 
                     <button className="login__button">Log in</button>
 
                     {this.state.error && <div className="login__message">{this.state.error}</div>}
-                    {this.state.success && <Redirect to="/" />}
+                    {this.state.success && <Redirect to="/main" />}
                 </form>
-                <p>
+                <p className="login__details">
                     Need an account? <Link to="/signUp">Sign up</Link>
                 </p>
+                </section>
             </main>
         );
     }

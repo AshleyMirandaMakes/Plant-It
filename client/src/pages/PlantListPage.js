@@ -9,8 +9,19 @@ class PlantListPage extends Component {
     isLoggedIn: false,
     user: null,
     plants: [],
+    favoritePlants : ["1"],
   };
 
+  favoriteHandler = (plant) => {
+    console.log(plant.id)
+    // make a post req with headers
+    // send the favorite list back to state: this.setState to 
+
+  }
+
+  isFavorite = (id) => {
+    return this.state.favoritePlants.includes(id)
+  }
 
   componentDidMount() {
     const token = sessionStorage.getItem("token");
@@ -50,8 +61,8 @@ class PlantListPage extends Component {
     );
   }
 
-  // console.log(this.state.plants)
-  // console.log(this.state.user)
+  console.log(this.state.plants)
+  console.log(this.state.user)
 
   return (
     <div className="plantList">
@@ -64,6 +75,8 @@ class PlantListPage extends Component {
               commonName={plant.commonName}
               difficulty={plant.difficulty}
               size={plant.size}
+              favoriteHandler={this.favoriteHandler}
+              isFavorite={this.isFavorite(plant.id)}
             />
           ))}
     </div>

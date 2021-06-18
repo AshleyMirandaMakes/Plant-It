@@ -2,6 +2,10 @@ import Nav from "../components/Nav/Nav";
 
 function FavoritePlantsPage(){
 
+  //make a get req to the favotire plants
+  //map through the response
+  //put it in a plantCard Component
+
   return (
     <div className="favoritePlants">
     <Nav/>

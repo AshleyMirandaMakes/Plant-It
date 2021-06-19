@@ -59,6 +59,11 @@
   &__icon {
     width: 15px;
     background-color: $color-white;
+    &--special {
+      width: 15px;
+      background-color: $color-white;
+      color: $color-tuna;
+    }
   }
   &__heading{
     @include font-abril;
@@ -79,5 +84,14 @@
   &__details {
     @include font-light; // make thicker
   }
-
+  &__button {
+    border: none;
+    color: $color-tuna;
+    background-color: $color-white;
+    &--special {
+      border: none;
+      color: $color-tuna;
+      background-color: $color-white;
+    }
+  }
 }

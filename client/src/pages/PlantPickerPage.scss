@@ -4,10 +4,9 @@
 
 .plantPicker {
   width: 100%;
-  //background-image: url('../assets/images/mosaic-background.jpg'); 
-  //background-size: cover;
   background-color: $color-moss;
   padding: 1rem;
+  min-height: 100vh;
   &__title {
     //@include flex-center;
     margin: 1rem;
@@ -25,8 +24,9 @@
   &__button-container{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     opacity: 70%;
+    min-height: 312px;
   }
   &__button {
     @include flex-center;

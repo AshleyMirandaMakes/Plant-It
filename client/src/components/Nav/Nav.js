@@ -38,10 +38,15 @@ class Nav extends Component {
             >
               list
             </Link>
-            <Link className='nav__link'
+            {/* <Link className='nav__link'
               to={"/favoritePlants"}
             >
               favorites 
+            </Link> */}
+            <Link className='nav__link'
+              to={"/careTips"}
+            >
+              care
             </Link>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-//import { Component } from "react";
 import Star from "../../assets/images/icons/star-empty.svg";
+import FilledStar from "../../assets/images/icons/star-full.svg";
 import PlantDetailsPage from "../../pages/PlantDetailsPage"
 import './PlantCard.scss';
 
@@ -24,7 +24,7 @@ function PlantCard (props){
           <div className="plantCard__right">
             <div className="plantCard__top">
               <h3 className="plantCard__heading">{commonName}</h3>
-              <button className={isFavorite? "plantCard__button--special" : "plantCard__button"} onClick={() => {favoriteHandler(id)}}><img className="plantCard__icon" src={Star} alt="favorite icon"/></button>
+              {/* {isFavorite? <button class="plantCard__button--special" onClick={() => {favoriteHandler(id)}}><img className="plantCard__icon--special" src={FilledStar} alt="favorite icon"/>liked.</button> : <button class="plantCard__button" onClick={() => {favoriteHandler(id)}}><img className="plantCard__icon" src={Star} alt="favorite icon"/>like?</button> } */}
             </div>
           <div className="plantCard__subheadings">
              <h5 className="plantCard__details">Difficulty: {difficulty}</h5>

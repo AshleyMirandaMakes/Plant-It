@@ -24,19 +24,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use((req, res, next) => {
-//   if (
-//     req.method === "POST" &&
-//     req.headers["content-type"] !== "application/json;charset=UTF-8"
-//   ) {
-//     return res.status(400).json({
-//       message: "POST requests must contain content-type=application/json",
-//     });
-//   } else {
-//     next();
-//   }
-// });
-
 // Routes
 app.use("/api/users", signUpRoute);
 app.use("api/users", loginRoute);

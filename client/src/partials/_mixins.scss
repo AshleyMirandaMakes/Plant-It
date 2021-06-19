@@ -68,6 +68,16 @@
   font-style: italic
 }
 
+@mixin font-thin {
+  font-family: "Lato";
+  font-weight: 300;
+}
+
+@mixin font-regular {
+  font-family: "Lato";
+  font-weight: 400;
+}
+
 @mixin font-bold {
   font-family: "Lato";
   font-weight: 700;

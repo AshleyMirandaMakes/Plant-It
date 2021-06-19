@@ -46,7 +46,7 @@ class Login extends Component {
                     {this.state.success && <Redirect to="/main" />}
                 </form>
                 <p className="login__details">
-                    Need an account? <Link to="/signUp">Sign up</Link>
+                    Need an account? <Link to="/signUp" className="login__link">Sign up</Link>
                 </p>
                 </section>
             </main>

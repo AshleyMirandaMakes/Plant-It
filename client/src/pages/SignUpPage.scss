@@ -2,34 +2,28 @@
 @use '../partials/variables' as *;
 @use '../partials/resets' as *;
 
-.signup {
+.signUp {
   width: 100%;
   min-height: 500px;
-  background-image: url('../assets/images/backgrounds/zz-leaves-annie-spratt.jpg');
+  background-image: url('../assets/images/backgrounds/henry-leaves-bottomleft.jpg');
   background-size: cover;
   background-position: 100% 0%;
-  //background-color: $color-baltic-sea;
   &__container { 
     @include margin-auto;
     width: 100%; 
     max-width: 350px;
   }
-  &__heading {
-    @include font-abril;
-    @include flex-center;
-    color: $color-pink; // maybe tuna
-    margin-top: 5rem;
-    padding-bottom: .5rem;
-  }
   &__form{
     @include margin-auto;
+   // padding-top: .5rem;
+    padding-top: 4rem;
     width: 100%;
   }
   &__title {
     @include flex-center;
     color: $color-tuna;
     padding-bottom: .5rem;
-    padding-top: 2rem;
+    padding-top: 3rem;
   }
   &__button {
     @include flex-center;
@@ -43,6 +37,14 @@
   &__details {
     @include flex-center;
     @include margin-auto;
-    margin-top: 1.5rem;
+    @include font-regular;
+    // margin-top: 1.5rem;
+    margin-top: 3.5rem;
+  }
+  &__link {
+    @include link-reset;
+    @include font-regular;
+    padding: 0 .25rem;
+    color: $color-pink;
   }
 }

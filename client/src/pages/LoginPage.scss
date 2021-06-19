@@ -7,8 +7,7 @@
   min-height: 500px;
   background-image: url('../assets/images/backgrounds/ficus-leaves-pretty-josh-calabrese.jpg');
   background-size: cover;
-  background-position: 100% 0%;
-  //background-color: $color-baltic-sea;
+  background-position: 60% 0%;
   &__container { 
     @include margin-auto;
     width: 100%; 
@@ -19,7 +18,9 @@
     @include flex-center;
     color: $color-pink; // maybe tuna
     margin-top: 5rem;
+    padding-top: 1.25rem;
     padding-bottom: .5rem;
+    font-size: 2.5rem;
   }
   &__form{
     @include margin-auto;
@@ -27,9 +28,10 @@
   }
   &__title {
     @include flex-center;
+    //@include font-regular;
     color: $color-tuna;
     padding-bottom: .5rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
   }
   &__button {
     @include flex-center;
@@ -44,5 +46,11 @@
     @include flex-center;
     @include margin-auto;
     margin-top: 1.5rem;
+  }
+  &__link {
+    @include link-reset;
+    @include font-regular;
+    padding: 0 .25rem;
+    color: $color-pink;
   }
 }

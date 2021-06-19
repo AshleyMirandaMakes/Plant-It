@@ -1,35 +1,16 @@
 [
   {
-    "id": 1,
-    "firstName": "",
-    "password": "",
-    "email": "",
-    "favoritePlants": []
-  },
-  {
-    "id": "03800594-e2c0-49dd-b289-4c7e496bb816",
-    "firstName": "eric",
-    "email": "eric@gmail.com",
-    "password": "$2b$06$QbADcGN.5WZiCl0.rmPRHuSVZAy.qPh3KZNNo1wRys0YE6R1WqIPe"
-  },
-  {
-    "id": "1f382445-3127-474a-8839-48003b5d975c",
-    "firstName": "peter",
-    "email": "peter@gmail.com",
-    "password": "$2b$06$MuiTlXQFJgGHwbQyaJtkcuvAMvLmy5AHYoNzymEfkChkUplrYWIJu"
-  },
-  {
     "id": "cda4f03a-3525-4d1c-a87d-5404b88850cc",
     "firstName": "Mary",
     "email": "mary@gmail.com",
     "password": "$2b$06$gu6xvEef9vT4TL6OlwE5sug9zzwwcuTUqX0BrQ.gz8JXGsJorHPCi",
-    "favoritePlants": []
+    "favoritePlants": [{ "id" : "1"}, { "id" : "4"}]
   },
   {
     "id": "792fae0d-cb7a-4ecc-bb29-e7f67a2f242c",
     "firstName": "Song",
     "email": "song@gmail.com",
     "password": "$2b$06$BldCjUsMr//tVHF5oZaUhupiRWpwLQCzctIfzwZoTKiOV1wF69nd6",
-    "favoritePlants": []
+    "favoritePlants": [{"id" : "5" }, {"id": "6" }]
   }
 ]

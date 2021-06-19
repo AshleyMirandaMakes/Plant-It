@@ -16,7 +16,7 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  border: 1px solid lavender;
+  //border: 1px solid lavender;
 }
 
 Link {
@@ -25,47 +25,47 @@ Link {
 }
 
 body {
-  @include font-light;
+  @include font-thin;
   color: $color-baltic-sea;
 }
 
-// h1 {
-//   @include font-regular;
-//   font-size: 1.75rem;
-//   line-height: 2.25rem;
-//   @include tablet {
-//     font-size: 2rem;
-//     line-height: 2.5rem;
-//   }
-// }
+h1 {
+  @include font-regular;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  @include tablet {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
 
-// h2 {
-//   @include font-regular;
-//   font-size: 1.25rem;
-//   line-height: 1.75rem;
-//   @include tablet {
-//     font-size: 1.5rem;
-//     line-height: 2rem;
-//   }
-// }
+h2 {
+  @include font-thin;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
 
-// h3 {
-//   @include font-demi;
-//   font-size: 0.8125rem;
-//   line-height: 1.25rem;
-//   @include tablet {
-//     font-size: 0.875rem;
-//     line-height: 1.125rem;
-//   }
-// }
+h3 {
+  @include font-thin;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+  }
+}
 
-// h4 {
-//   @include font-demi;
-//   font-size: 0.6875rem;
-//   line-height: 1rem;
-//   @include tablet {
-//     font-size: 0.75rem;
-//     line-height: 1.125rem;
-//   }
-// }
+h4 {
+  @include font-thin;
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  @include tablet {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
 

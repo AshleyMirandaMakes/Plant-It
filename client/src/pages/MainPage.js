@@ -2,7 +2,7 @@ import "./MainPage.scss";
 import { Component , Link } from "react";
 import axios from "axios";
 import MainNav from "../components/MainNav/MainNav"
-//import Nav from "../components/Nav/Nav";
+import Nav from "../components/Nav/Nav";
 
 class MainPage extends Component {
   state = {
@@ -17,7 +17,6 @@ class MainPage extends Component {
         return this.setState({ isLoggedIn: false });
     }
 
-    // Get the data from the API
   axios
     .get("http://localhost:8080/api/currentUser", {
       headers: {
@@ -50,10 +49,15 @@ class MainPage extends Component {
 
   return (
     <div className="mainPage">
-     {/* <Nav/> */}
-     <p className="mainPage__title">Welcome back, {firstName}!</p>
-     <h2 className="mainPage__heading">What would you like to do?</h2>
-     <MainNav/>
+      <Nav/>
+      <div className="mainPage__container">
+        <div className="mainPage__title-container">
+          <h1 className="mainPage__title">Welcome back,</h1>
+          <h1 className="mainPage__title">{firstName}!</h1>
+        </div>
+        <h2 className="mainPage__heading">What would you like to do?</h2>
+        <MainNav/>
+      </div>
     </div>
   )
   }

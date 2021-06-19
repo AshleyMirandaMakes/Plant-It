@@ -1,0 +1,20 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/variables' as *;
+@use '../../partials/resets' as *;
+
+.mainNav {
+  width: 100%;
+  &__container{
+    @include flex-center;
+    padding: .75rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__link{
+    @include link-reset;
+    padding: .5rem;
+    background-color: $color-moss;
+    margin: .5rem ;
+    border-radius: 4px;
+  }
+}

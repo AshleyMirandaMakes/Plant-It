@@ -5,7 +5,6 @@ function MainNav () {
   return (
     <nav className='mainNav'>
     <div className='mainNav__container'>
-      <div className='mainNav__link-container'>
         <Link className='mainNav__link'
           to={"/plantPicker"}
         >
@@ -27,7 +26,6 @@ function MainNav () {
           See plant care tips
         </Link>
       </div>
-    </div>
   </nav>
 
 )

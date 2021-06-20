@@ -25,7 +25,7 @@ function PlantCard (props){
           <div className="plantCard__right">
             <div className="plantCard__top">
               <h3 className="plantCard__heading">{commonName}</h3>
-              {/* {isFavorite? <button class="plantCard__button--special" onClick={() => {favoriteHandler(id)}}><img className="plantCard__icon--special" src={FilledStar} alt="favorite icon"/>liked.</button> : <button class="plantCard__button" onClick={() => {favoriteHandler(id)}}><img className="plantCard__icon" src={Star} alt="favorite icon"/>like?</button> } */}
+              {isFavorite? <button class="plantCard__button--special" onClick={() => {favoriteHandler(id)}}><img className="plantCard__icon--special" src={FilledStar} alt="favorite icon"/></button> : <button class="plantCard__button" onClick={() => {favoriteHandler(id)}}><img className="plantCard__icon" src={Star} alt="favorite icon"/></button> }
             </div>
           <div className="plantCard__subheadings">
              <h5 className="plantCard__details">Difficulty: {difficulty}</h5>

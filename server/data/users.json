@@ -1,1 +1,37 @@
-[{"id":"cda4f03a-3525-4d1c-a87d-5404b88850cc","firstName":"Mary","email":"mary@gmail.com","password":"$2b$06$gu6xvEef9vT4TL6OlwE5sug9zzwwcuTUqX0BrQ.gz8JXGsJorHPCi","favoritePlants":[{"id":"1"},{"id":"4"}]},{"id":"792fae0d-cb7a-4ecc-bb29-e7f67a2f242c","firstName":"Song","email":"song@gmail.com","password":"$2b$06$BldCjUsMr//tVHF5oZaUhupiRWpwLQCzctIfzwZoTKiOV1wF69nd6","favoritePlants":[{"id":"5"},{"id":"6"}]},{"id":"19c26eb9-e924-41ea-80ca-38ad60564eaf","firstName":"carlos","email":"carlos@gmail.com","password":"$2b$06$jFmpPAcWB2SHQtJCmsELMuS195N6DifZYw3s5XDsWRaSTB5b0RcXK","favoritePlants":[]},{"id":"ed5c458d-430c-407c-8c38-5827e8d86489","firstName":"Eric","email":"eric@gmail.com","password":"$2b$06$ZVWgfMkhcObE4BY2Hs/svOLS2b/g60KKAiBgP2dYBYe55sQ6LMXpO","favoritePlants":[]}]
+[
+  {
+    "id": "cda4f03a-3525-4d1c-a87d-5404b88850cc",
+    "firstName": "Mary",
+    "email": "mary@gmail.com",
+    "password": "$2b$06$gu6xvEef9vT4TL6OlwE5sug9zzwwcuTUqX0BrQ.gz8JXGsJorHPCi",
+    "favoritePlants": [{ "id": "1" }, { "id": "4" }]
+  },
+  {
+    "id": "792fae0d-cb7a-4ecc-bb29-e7f67a2f242c",
+    "firstName": "Song",
+    "email": "song@gmail.com",
+    "password": "$2b$06$BldCjUsMr//tVHF5oZaUhupiRWpwLQCzctIfzwZoTKiOV1wF69nd6",
+    "favoritePlants": [{ "id": "5" }, { "id": "6" }]
+  },
+  {
+    "id": "19c26eb9-e924-41ea-80ca-38ad60564eaf",
+    "firstName": "carlos",
+    "email": "carlos@gmail.com",
+    "password": "$2b$06$jFmpPAcWB2SHQtJCmsELMuS195N6DifZYw3s5XDsWRaSTB5b0RcXK",
+    "favoritePlants": []
+  },
+  {
+    "id": "ed5c458d-430c-407c-8c38-5827e8d86489",
+    "firstName": "Eric",
+    "email": "eric@gmail.com",
+    "password": "$2b$06$ZVWgfMkhcObE4BY2Hs/svOLS2b/g60KKAiBgP2dYBYe55sQ6LMXpO",
+    "favoritePlants": []
+  },
+  {
+    "id": "5fcac406-b051-4557-bfee-b83e1ed0a4a8",
+    "firstName": "Chris",
+    "email": "chris@gmail.com",
+    "password": "$2b$06$xevGCMyqZvCt9wX5ueHRuOc37io27.M3onG7OpO56eQGile5tzYJG",
+    "favoritePlants": []
+  }
+]

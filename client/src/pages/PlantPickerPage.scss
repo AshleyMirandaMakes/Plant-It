@@ -7,13 +7,14 @@
   background-color: $color-moss;
   padding: 1rem;
   min-height: 100vh;
-  &__title {
-    //@include flex-center;
-    margin: 1rem;
-  }
-  // &__link-container{
-    
+  // &__title {
+  //   //@include flex-center;
+  //   margin: 1rem;
+
   // }
+  // // &__link-container{
+    
+  // // }
   &__header {
     @include font-abril;
     @include flex-center;
@@ -33,7 +34,10 @@
     @include flex-center;
     @include font-light;
     @include link-reset;
-    padding-bottom: .25rem;
+    padding-bottom: 1rem;
+    &:hover{
+      @include font-light-italic
+    }
   }
   &__button-container{
     @include margin-auto;
@@ -44,13 +48,26 @@
     min-height: 312px;
     @include mid-mobile{
       max-width: 500px;
-  }
+    }
+    &--special {
+      @include margin-auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      opacity: 70%;
+      max-height: 300px;
+      width: 100%;
+      @include mid-mobile{
+        max-width: 500px;
+      }
+    }
 }
   &__button {
     @include flex-center;
     @include font-light;
     background-color: $color-tuna;
     color: $color-white;
+    min-width: auto;
     padding: 1.5rem;
     margin: 1rem 2rem;
     font-size: 1.25rem;

@@ -54,30 +54,39 @@
     @include font-abril;
     @include flex-center;
     color: $color-white;
-    font-size: 2rem;
-    padding: 1rem;
-    padding-top: 1.5rem;
+    font-size: 2.5rem;
+    padding: 1rem .5rem;
+    margin: .75rem 0;
+    border-bottom: 1px solid $color-tuna;
+
   }
   &__sub-heading{
     @include flex-center;
-    padding: .5rem;
-    font-size: .9rem;
+    padding: .75rem;
+    font-size: 1.25rem;
   }
   &__special {
     @include font-regular;
     padding-left: .25rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   &__title{
     @include flex-center;
+    @include margin-auto;
     color: $color-white;
+    width: 180px;
+    text-align: center;
     padding: .5rem;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    padding-top: .75rem;
+    //border-bottom: 1px solid $color-white;
   }
   &__description{
-    padding: .25rem 0;
+    padding: .5rem 0;
+    padding-top: .75rem;
     line-height: 1.05rem;
-    font-size: .825rem;
+    font-size: 1rem;
+    //background-color: $color-white;
     text-align: center;
     @include tablet {
       @include margin-auto;
@@ -87,6 +96,7 @@
   &__sub-container {
     display: flex;
     justify-content: space-between;
+    //background-color: $color-white;
     padding: 1rem 0;
     @include tablet {
       @include margin-auto;
@@ -95,11 +105,11 @@
   }
   &__details {
     @include font-thin;
-    font-size: .85rem;
+    font-size: 1.25rem;
     &--special {
       @include font-regular;
       padding-left: .25rem;
-      font-size: .925rem;
+      font-size: 1.35rem;
     }
   }
 

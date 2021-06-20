@@ -2,18 +2,18 @@
   {
     "id": "1",
     "commonName": "String of Pearls",
-    "botanicalName": "",
+    "botanicalName": "Senecio rowleyanus",
     "image": "public/white-string-of-pearls-jpeg.jpeg",
-    "description": " While these tropical fruiting plants are commonly referred to as trees, they’re technically huge herbaceous plants, as they don’t have a woody stem. Instead, they have fleshy, upright stalks from which large, oblong, bright green leaves grow. Showy flowers appear typically in the spring, giving way to the fleshy, elongated, green or yellow fruit. While most species grow best in warm climates, there also are somewhat cold-hardy banana trees. Plus, they can make good houseplants with enough light, though they typically don't bear fruit indoors.",
+    "description": "String of pearls plants are unique vining succulents that are easily recognizable by their almost spherical, tiny pea-shaped leaves. The leaves grow on trailing stems that gracefully spill over the sides of planters and hanging baskets. You can use these stems to propagate the plant, which is a very robust and quick grower but does not live long without propagation. Though normally cultivated year-round as a hanging plant, in its natural habitat (the deserts of East Africa) the string of pearls is terrestrial and forms a ground cover. In addition to its peculiar sphere-like leaves, the string of pearls produces white flowers in spring with a pleasant scent reminiscent of cinnamon (though it rarely flowers indoors).",
     "watering" : "weekly",
-    "difficulty": "medium",
+    "difficulty": "beginner",
     "safeForDogs" : false,
-    "safeForCats" : true,
+    "safeForCats" : false,
     "light": "direct" ,
     "flowering": true,
-    "size":"large",
+    "size":"small",
     "perennial" : true,
-    "care" : "Choosing the right planting site is key to making banana tree care easy. Grow this plant in a location where it will be sheltered from strong winds, as it is very susceptible to damaged leaves. Prepare your planting site by mixing some compost into the soil. And make sure you have enough space for the height and spread of your particular species. During the growing season (spring to fall), banana trees are water hogs. You might have to water daily, especially during hot weather, to maintain adequate soil moisture. The plants also will need regular fertilization throughout the growing season."
+    "care" : "The string of pearls plant is not particular about its conditions. Given enough light and fertilizer, it will grow quite vigorously in a season. A single plant will survive for about five years if properly cared for, but if you propagate new plants from stem cuttings, you can effectively keep it alive indefinitely. To enable this plant to shine, consider growing string of pearls with multiple stems in a hanging basket. Its stems can also be twined together, and you can also grow it in a dish, allowing it to form a terrestrial mat the way it does in the wild. String of pearls has no major pest or disease problems, and it doesn’t require much care. It does, however, need plenty of light all year."
   },
   {
     "id": "2",
@@ -158,7 +158,7 @@
 }, {
   "id": "12",
   "commonName": "Banana Tree",
-  "botanicalName": "Musa acuminata, Musa ornata, Musa basjoo",
+  "botanicalName": "Musa acuminata",
   "image": "public/potted-banana-tree.jpeg",
   "description": " While these tropical fruiting plants are commonly referred to as trees, they’re technically huge herbaceous plants, as they don’t have a woody stem. Instead, they have fleshy, upright stalks from which large, oblong, bright green leaves grow. Showy flowers appear typically in the spring, giving way to the fleshy, elongated, green or yellow fruit. While most species grow best in warm climates, there also are somewhat cold-hardy banana trees. Plus, they can make good houseplants with enough light, though they typically don't bear fruit indoors.",
   "watering" : "weekly",
@@ -170,5 +170,50 @@
   "size":"large",
   "perennial" : true,
   "care" : "Choosing the right planting site is key to making banana tree care easy. Grow this plant in a location where it will be sheltered from strong winds, as it is very susceptible to damaged leaves. Prepare your planting site by mixing some compost into the soil. And make sure you have enough space for the height and spread of your particular species. During the growing season (spring to fall), banana trees are water hogs. You might have to water daily, especially during hot weather, to maintain adequate soil moisture. The plants also will need regular fertilization throughout the growing season."
+}, {
+  "id": "13",
+  "commonName": "Snake Plant",
+  "botanicalName": "Sansevieria trifasciata",
+  "image": "public/potted-vari-sansivera-christin-hume.jpg",
+  "description": "The snake plant is one of the most popular and hardy species of houseplants. It features stiff leaves that range from 6 inches to 8 feet tall, depending on the variety. Snake plants vary in color but usually have green banded leaves and commonly feature a yellow border. These plants are easy to grow and nearly indestructible; they will thrive in either very bright light or almost dark corners of the house. They generally grow slowly in indoor light but a few hours of direct morning sun will boost their growth. Snake plants may even improve your health and well-being. Joint studies run by the University of Georgia and Yonsei University, the snake plant has a demonstrated ability to remove formaldehyde and benzene from the air.",
+  "watering" : "monthly",
+  "difficulty": "beginner",
+  "safeForDogs" : false,
+  "safeForCats" : false,
+  "light": "minimal" ,
+  "flowering": true,
+  "size":"medium",
+  "perennial" : true,
+  "care" : "Snake plant is ideal for beginner gardeners, as it is almost impossible to kill them. An ideal container plant, it is excellent in a grouping and will grow equally well on the floor or on tabletop displays. These plants are also drought-resistant. There are two low-growing varieties, but these are rarely seen in garden centers. Be careful not to over water your snake plant, as this can lead to rotting. Make sure the soil is dry before watering again. They can even go two months between waterings in the winter months. In warmer months, water every three to four weeks. Snake plants thrive in warm weather and will struggle in very cold conditions."
+}, {
+  "id": "14",
+  "commonName": "Pothos",
+  "botanicalName": "Epipremnum aureum",
+  "image": "public/potted-pothos.jpg",
+  "description": "Pothos is arguably one of the easiest houseplants to grow, even if you're someone who forgets to water your plants often enough. This trailing vine, native to the Solomon Islands in the South Pacific, boasts pointed, heart-shaped green leaves that are sometimes variegated with white, yellow, or pale green striations. Pothos can be planted or tended to indoors throughout the entire year and will grow quickly, often adding between 12 and 18 inches of length a month. While pothos likes bright, indirect like, it can also thrive in areas that don't get a lot of sunlight or only have fluorescent lighting, making it an excellent option for locations such as offices and dorm rooms.",
+  "watering" : "bi-weekly",
+  "difficulty": "beginner",
+  "safeForDogs" : false,
+  "safeForCats" : false,
+  "light": "minimal" ,
+  "flowering": false,
+  "size":"medium",
+  "perennial" : true,
+  "care" : "Pothos vines do not cling to trellises and supports on their own (like ivy might), but they can be trained onto supports to give the appearance of twining. As indoor plants, pothos specimens up to 30 feet long are common, though most are kept at a much shorter length. If you choose to let your pothos grow into a long vine, it can be secured on hooks along walls and over window frames. Vines left to grow on their own can get very tangled, so shake them loose every now and then to keep them from becoming a mess. Caring for a pothos plant is very easy and they're pretty tolerant of neglect and growing environments that are not totally ideal."
+}, {
+  "id": "15",
+  "commonName": "Satin Pothos",
+  "botanicalName": "Scindapsus pictus",
+  "image": "public/potted-silver-pothos.jpg",
+  "description": "Satin pothos, just like its botanical cousin pothos, is one of the easiest houseplants to grow. Both are members of the Arum family. They are evergreen tropical vines that are not cold-tolerant. That’s why pothos is usually grown indoors. What distinguishes satin pothos from pothos is the variegation of its foliage. The heart-shaped leaves have silvery grey splotches, which makes them look almost shiny and adds to the visual appeal of the plant. The intensity of the variegation depends on the cultivar.",
+  "watering" : "bi-weekly",
+  "difficulty": "beginner",
+  "safeForDogs" : false,
+  "safeForCats" : false,
+  "light": "indirect" ,
+  "flowering": true,
+  "size":"medium",
+  "perennial" : true,
+  "care" : "Satin pothos is a low-maintenance houseplant. In addition to the routine care of watering and fertilizing, an extra step you can take to improve its appearance is snipping off any damaged or dead leaves and pruning when the vines are growing too long and becoming sparse. Cutting back the plant will encourage new leaf growth and make it fuller. Pruning is best done in the spring when the growing season starts. If your satin pothos accumulates dust, you can wash the leaves with water. Don’t use oil to make them shine, as it can clog the cells and affect the leaves’ ability to breathe."
 }
 ]

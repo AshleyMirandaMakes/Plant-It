@@ -126,7 +126,7 @@ class PlantPickerPage extends Component {
       return (
         <>
           <Nav/>
-          <h1 className="plantPicker__title">Here's your plant suggestions:</h1> 
+          <h1 className="plantPicker__header">Here's your plant suggestions:</h1> 
             <article className="plantCard">
               <Link className="plantCard__link" key={this.state.pickedPlants.id} to={"/allPlants/" + this.state.pickedPlants.id}>
               <div className="plantCard__container">
@@ -232,7 +232,7 @@ const StepThree = (props) => {
     <div className="plantPicker">
       <div className="plantPicker__link-container">
         <h2 className="plantPicker__header plantPicker__header--special">{currentStep}What type of light will this plant live in?</h2>
-        <Link className="plantPicker__link" to={'/careTips'}>? light </Link>
+        <Link className="plantPicker__link" to={'/careTips'}>Need help? Check out the Lighting Guide</Link>
       </div>
         <div className="plantPicker__button-container">
           <button 
@@ -289,7 +289,7 @@ const StepFive = (props) => {
   return(
     <div className="plantPicker">
       <h2 className="plantPicker__header">{currentStep}Do you need dog-safe plants?</h2>
-        <div className="plantPicker__button-container">
+        <div className="plantPicker__button-container--special">
           <button 
             className="plantPicker__button"
             onClick={()=> {handleClick(true)}}>Yes, please</button>
@@ -312,7 +312,7 @@ const StepSix = (props) => {
   return(
     <div className="plantPicker">
       <h2 className="plantPicker__header">{currentStep}Do you need cat-safe plants?</h2>
-        <div className="plantPicker__button-container">
+        <div className="plantPicker__button-container--special">
           <button 
             className="plantPicker__button"
             onClick={()=> {handleClick(true)}}>Yes, please</button>

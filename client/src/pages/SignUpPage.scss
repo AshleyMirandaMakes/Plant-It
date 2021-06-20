@@ -4,10 +4,17 @@
 
 .signUp {
   width: 100%;
-  min-height: 500px;
+  height: 100vh;
   background-image: url('../assets/images/backgrounds/henry-leaves-bottomleft.jpg');
   background-size: cover;
-  background-position: 100% 0%;
+  background-position: 100% 50%;
+  min-height: 500px;
+  @include mid-mobile{
+    background-position: 60% 70%;
+  }
+  @include tablet {
+    background-position: 60% 80%;
+  }
   &__container { 
     @include margin-auto;
     width: 100%; 
@@ -23,7 +30,7 @@
     @include flex-center;
     color: $color-tuna;
     padding-bottom: .5rem;
-    padding-top: 3rem;
+    padding-top: 1.5rem;
   }
   &__button {
     @include flex-center;

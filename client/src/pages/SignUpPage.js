@@ -34,7 +34,7 @@ class Signup extends Component {
       <main className="signUp">
         <section className="signUp__container">
         <form className="signUp__form" onSubmit={this.handleSubmit}>
-          {/* <h1 className="signUp__title">Sign up</h1> */}
+          <h1 className="signUp__title">Sign up</h1>
             <Input type="text" name="firstName" label="First Name" />
             <Input type="text" name="email" label="Email" />
             <Input type="password" name="password" label="Password" />

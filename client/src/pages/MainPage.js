@@ -10,6 +10,7 @@ class MainPage extends Component {
     isLoggedIn : false,
     user: null,
     //toSignIn : false,
+    // isMainPage : true,
   }
 
   componentDidMount() {

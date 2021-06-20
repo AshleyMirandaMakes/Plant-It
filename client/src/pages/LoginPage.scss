@@ -4,10 +4,17 @@
 
 .login {
   width: 100%;
-  min-height: 500px;
+  height: 100vh;
   background-image: url('../assets/images/backgrounds/ficus-leaves-pretty-josh-calabrese.jpg');
   background-size: cover;
-  background-position: 60% 0%;
+  background-position: 60% 30%;
+  min-height: 500px;
+  @include mid-mobile{
+    background-position: 60% 50%;
+  }
+  @include tablet {
+    background-position: 60% 70%;
+  }
   &__container { 
     @include margin-auto;
     width: 100%; 

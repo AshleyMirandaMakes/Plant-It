@@ -21,7 +21,7 @@ function MainNav () {
           See a list of your favorite plants
         </Link>
         <Link className='mainNav__link'
-          to={"/"}
+          to={"/careTips"}
         >
           See plant care tips
         </Link>

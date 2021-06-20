@@ -20,4 +20,19 @@
     @include flex-center;
     padding-bottom: 1rem;
   }
+  &__logout {
+    @include margin-auto;
+    @include flex-center;
+    @include link-reset;
+    @include font-light;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    color: $color-tuna;
+    background-color: $color-white;
+    border: none;
+    &:hover {
+      @include font-light-italic;
+    }
+  }
+
 }

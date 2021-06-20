@@ -21,8 +21,9 @@
   &__container{
     width: 100%;
     display: flex;
+    background-color: $color-light-green;
+    padding: .5rem 0;
     @include tablet {
-      background-color: $color-light-green;
       padding: 1rem 0;
     }
   }
@@ -32,7 +33,7 @@
     margin: .5rem;
     height: 70px;
     width: 70px;
-    background-color: $color-spanish-green;
+    background-color: $color-tuna;
     border-radius: 50%;
     @include tablet {
       @include margin-auto;
@@ -44,7 +45,9 @@
   &__right{
     max-width: 70%;
     width: 70%;
-    padding: .5rem 0;
+    padding: 1rem .5rem;
+    padding-left: 0;
+    min-width: 218px;
     @include tablet {
       @include margin-auto;
       width: 60%;
@@ -68,6 +71,7 @@
   &__heading{
     @include font-abril;
     color: $color-tuna;
+    font-size: 1.1rem;
     @include tablet {
       font-size: 2rem;
     }
@@ -76,13 +80,13 @@
     display: flex;
     justify-content: space-between;
     padding-top: .5rem;
-    color: $color-pink;
     @include tablet {
       font-size: 1.5rem;
     }
   }
   &__details {
-    @include font-light; // make thicker
+    @include font-thin; 
+    color: $color-juniper;
   }
   &__button {
     border: none;

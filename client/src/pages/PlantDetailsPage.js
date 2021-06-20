@@ -49,9 +49,9 @@ class PlantDetailsPage extends Component {
           </main>
       );
     }
-    //console.log(this.state.currentPlant); 
-    const { commonName, botanicalName, description, image, difficulty, flowering, light, perennial, size, care } = this.state.currentPlant;
-    console.log(commonName)
+    console.log(this.state.currentPlant); 
+    //t/f don't appear
+    const { commonName, botanicalName, light, description, image, difficulty, size, care } = this.state.currentPlant;
     
     return (
       <>
@@ -69,13 +69,11 @@ class PlantDetailsPage extends Component {
           </div>
           <div className="plantDetails__sub-container">
             <h5 className="plantDetails__details">Difficulty:  {difficulty}</h5>
-            <h5 className="plantDetails__details">Flowering: {flowering}</h5>
+          
             <h5 className="plantDetails__details">Size: {size}</h5>
+            <h5 className="plantDetails__details">Light type: {light}</h5>
           </div>
           <div className="plantDetails__sub-container">
-            <h5 className="plantDetails__details">Toxic to Cats: </h5>
-            <h5 className="plantDetails__details">Toxic to Dogs: </h5>
-            <h5 className="plantDetails__details">Light: {light}</h5>
           </div> 
           <h4 className="plantDetails__title">Care Tips:</h4>
           <p className="plantDetails__description">{care}</p>

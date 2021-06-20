@@ -31,8 +31,13 @@
     background-color: $color-pink;
     color: $color-white;
     padding: .25rem 1rem;
+    margin-top: .5rem;
     border: 0px;
     border-radius: 4px;
+  }
+  &__message {
+    @include flex-center;
+    padding-top: .5rem;
   }
   &__details {
     @include flex-center;

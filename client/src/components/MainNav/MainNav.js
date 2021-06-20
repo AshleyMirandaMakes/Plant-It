@@ -13,7 +13,7 @@ function MainNav () {
         <Link className='mainNav__link'
           to={"/allPlants"}
         >
-          See a list off all plants
+          See a list of all plants
         </Link>
         <Link className='mainNav__link'
           to={"/favoritePlants"}

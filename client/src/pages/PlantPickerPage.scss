@@ -17,6 +17,7 @@
   &__header {
     @include font-abril;
     @include flex-center;
+    text-align: center;
     color: $color-white;
     padding: 1rem;
     margin: 1rem;
@@ -35,12 +36,16 @@
     padding-bottom: .25rem;
   }
   &__button-container{
+    @include margin-auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     opacity: 70%;
     min-height: 312px;
+    @include mid-mobile{
+      max-width: 500px;
   }
+}
   &__button {
     @include flex-center;
     @include font-light;

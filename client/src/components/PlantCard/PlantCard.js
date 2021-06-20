@@ -20,6 +20,7 @@ function PlantCard (props){
     <section className="plantCard">
       <Link className="plantCard__link" key={id} to={"/allPlants/" + id}>
         <div className="plantCard__container">
+        <div className="plantCard__sub-container">
           <img className="plantCard__left" src={`http://localhost:8080/${image}`} alt={commonName}/>
           <div className="plantCard__right">
             <div className="plantCard__top">
@@ -29,6 +30,7 @@ function PlantCard (props){
           <div className="plantCard__subheadings">
              <h5 className="plantCard__details">Difficulty: {difficulty}</h5>
              <h5 className="plantCard__details"> Size: {size}</h5>
+          </div>
           </div>
         </div>
        </div>

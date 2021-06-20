@@ -50,7 +50,7 @@ class PlantDetailsPage extends Component {
       );
     }
     console.log(this.state.currentPlant); 
-    //t/f don't appear
+    //t/f don't appear -- phase 2? need some logic here. 
     const { commonName, botanicalName, light, description, image, difficulty, size, care } = this.state.currentPlant;
     
     return (
@@ -62,19 +62,16 @@ class PlantDetailsPage extends Component {
           <img className="plantDetails__image" src={`http://localhost:8080/${image}`} alt={commonName}/>
           <div className="plantDetails__heading-container">
             <h2 className="plantDetails__heading">{commonName}</h2>
-            <h3 className="plantDetails__sub-heading">Also known as {botanicalName}</h3>
+            <h3 className="plantDetails__sub-heading">Botanical Name: <span className="plantDetails__special">{botanicalName}</span></h3>
             <h4 className="plantDetails__title">Plant Details:</h4>
             <p className="plantDetails__description">{description}</p>
           </div>
           </div>
           <div className="plantDetails__sub-container">
-            <h5 className="plantDetails__details">Difficulty:  {difficulty}</h5>
-          
-            <h5 className="plantDetails__details">Size: {size}</h5>
-            <h5 className="plantDetails__details">Light type: {light}</h5>
+            <h5 className="plantDetails__details">Difficulty:  <span className="plantDetails__details--special">{difficulty}</span></h5>
+            <h5 className="plantDetails__details">Size:<span className="plantDetails__details--special">{size}</span></h5>
+            <h5 className="plantDetails__details">Light:<span className="plantDetails__details--special">{light}</span></h5>
           </div>
-          <div className="plantDetails__sub-container">
-          </div> 
           <h4 className="plantDetails__title">Care Tips:</h4>
           <p className="plantDetails__description">{care}</p>
         </div>

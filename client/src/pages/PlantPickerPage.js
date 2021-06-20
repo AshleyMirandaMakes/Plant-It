@@ -126,7 +126,7 @@ class PlantPickerPage extends Component {
       return (
         <>
           <Nav/>
-          <h1 className="plantPicker__header">Here's your plant suggestions:</h1> 
+          <h1 className="plantPicker__title">Here's your plant suggestions:</h1> 
             <article className="plantCard">
               <Link className="plantCard__link" key={this.state.pickedPlants.id} to={"/allPlants/" + this.state.pickedPlants.id}>
               <div className="plantCard__container">

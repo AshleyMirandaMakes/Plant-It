@@ -25,7 +25,7 @@
     "firstName": "Eric",
     "email": "eric@gmail.com",
     "password": "$2b$06$ZVWgfMkhcObE4BY2Hs/svOLS2b/g60KKAiBgP2dYBYe55sQ6LMXpO",
-    "favoritePlants": []
+    "favoritePlants": [{ "id": "5" },{ "id": "12" }]
   },
   {
     "id": "5fcac406-b051-4557-bfee-b83e1ed0a4a8",

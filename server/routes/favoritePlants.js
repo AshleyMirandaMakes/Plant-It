@@ -10,22 +10,38 @@ function loadUsers() {
   return JSON.parse(fs.readFileSync("./data/users.json"));
 }
 
+function addFavorite(plant) {
+  return fs.writeFileSync("./data/users.json", JSON.stringify(plant));
+}
+
 router 
   .get("/", (req, res) => {
-    const plants = loadPlants();
+    // const plants = loadPlants();
+    // const users = loadUsers();
+
+    // const foundUser = users.find((user) => user.id === req.decoded.id) 
+
+    // const favoritePlantsId = foundUser.favoritePlants
+    // console.log("favorite plants of current user -- object", favoritePlantsId)
+
+    // res.json(foundUser)
+  })
+
+  .post("/", (req, res) => {
+    const { id } = req.body;
+
     const users = loadUsers();
 
     const foundUser = users.find((user) => user.id === req.decoded.id) 
-
-    const favoritePlantsId = foundUser.favoritePlants
-    console.log("favorite plants of current user -- object", favoritePlantsId)
-
-    res.json(plants)
-
     
+    const newFavoritePlant = {
+      id,
+    };
 
-    console.log(plants)
 
+    users.foundUser.favoritePlants.push(newFavoritePlant);
+    addFavorite(foundUser);
+    return res.json(addFavoritePlant(foundUser));
   })
 
   

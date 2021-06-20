@@ -9,25 +9,19 @@ class PlantListPage extends Component {
     isLoggedIn: false,
     user: null,
     plants: [],
-    favoritePlants : ["1"],
+    favoritePlants : [],
   };
-
-  favoriteHandler = (plant) => {
-    console.log(plant.id)
-    // make a post req with headers
-    // send the favorite list back to state: this.setState to 
-
-  }
 
   isFavorite = (id) => {
     return this.state.favoritePlants.includes(id)
   }
 
   componentDidMount() {
+
     const token = sessionStorage.getItem("token");
 
     if (!token) {
-        return this.setState({ isLoggedIn: false });
+      return this.setState({ isLoggedIn: false });
     }
 
     axios
@@ -50,9 +44,34 @@ class PlantListPage extends Component {
         console.error(error) 
     });
   };
+
+  favoriteHandler = (plant) => {
+    const token = sessionStorage.getItem("token");
+
+    if (!token) {
+      return this.setState({ isLoggedIn: false });
+    }
+
+    console.log(plant.id)
+    console.log(this.state.isFavorite)
+    // make a post req with headers
+    // send the favorite list back to state: this.setState to 
+    axios
+      .post(`http://localhost:8080/api/favoritePlants`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+              },
+            })
+            .then((response) => {
+              console.log(response)
+              this.setState({
+              });
+          })
+  }
   
 
  render() {
+   console.log(this.state.user)
   if (!this.state.user) {
     return (
         <main className="mainPage">
@@ -61,8 +80,8 @@ class PlantListPage extends Component {
     );
   }
 
-  console.log(this.state.plants)
-  console.log(this.state.user)
+  // console.log(this.state.plants)
+  // console.log(this.state.user)
 
   return (
     <div className="plantList">

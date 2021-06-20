@@ -42,6 +42,10 @@
     border: 0px;
     border-radius: 4px;
   }
+  &__message {
+    @include flex-center;
+    padding-top: .5rem;
+  }
   &__details {
     @include flex-center;
     @include margin-auto;

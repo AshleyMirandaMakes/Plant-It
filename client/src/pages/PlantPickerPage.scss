@@ -11,6 +11,9 @@
     //@include flex-center;
     margin: 1rem;
   }
+  // &__link-container{
+    
+  // }
   &__header {
     @include font-abril;
     @include flex-center;
@@ -19,7 +22,17 @@
     margin: 1rem;
     font-size: 1.7rem;
     opacity: 80%;
+    &--special{
+      padding-bottom: .25rem;
+      margin-bottom: 0;
+    }
+    }
     // background-color: $color-tuna
+  &__link {
+    @include flex-center;
+    @include font-light;
+    @include link-reset;
+    padding-bottom: .25rem;
   }
   &__button-container{
     display: flex;

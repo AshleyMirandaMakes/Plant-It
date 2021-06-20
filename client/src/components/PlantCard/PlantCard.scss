@@ -11,6 +11,7 @@
   }
   &__link {
     @include link-reset;
+    width: 100%;
     padding: 0;
     margin: 0;
     @include tablet {
@@ -20,6 +21,7 @@
   }
   &__container{
     width: 100%;
+    min-width: 300px;
     display: flex;
     background-color: $color-light-green;
     padding: .5rem 0;
@@ -33,7 +35,7 @@
     margin: .5rem;
     height: 70px;
     width: 70px;
-    background-color: $color-tuna;
+    background-color: $color-white;
     border-radius: 50%;
     @include tablet {
       @include margin-auto;
@@ -46,7 +48,6 @@
     max-width: 70%;
     width: 70%;
     padding: 1rem .5rem;
-    padding-left: 0;
     min-width: 218px;
     @include tablet {
       @include margin-auto;
@@ -71,7 +72,8 @@
   &__heading{
     @include font-abril;
     color: $color-tuna;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    padding-top: .25rem;
     @include tablet {
       font-size: 2rem;
     }

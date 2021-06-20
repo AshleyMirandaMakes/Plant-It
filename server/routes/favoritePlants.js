@@ -3,7 +3,7 @@ const router = express.Router();
 const fs = require("fs");
 
 function loadPlants() {
-  return JSON.parse(fs.readFileSync("./data/plants.json", "utf-8"));
+  return JSON.parse(fs.readFileSync("./data/plants-two.json", "utf-8"));
 }
 
 function loadUsers() {

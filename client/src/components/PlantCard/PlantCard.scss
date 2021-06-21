@@ -14,6 +14,9 @@
     width: 100%;
     padding: 0;
     margin: 0;
+    &:hover {
+      color: $color-pink;
+    }
     @include tablet {
       display: flex;
       width: 100%;
@@ -78,11 +81,13 @@
     flex-direction: row;
   }
   &__icon {
-    width: 15px;
-    background-color: $color-white;
+    padding-top: 15px;
+    width: 35px;
+    background-color: $color-light-green;
+    border: 1px solid $color-light-green; 
     &--special {
-      width: 15px;
-      background-color: $color-white;
+      width: 50px;
+      background-color: $color-light-green;
       color: $color-tuna;
     }
   }
@@ -91,6 +96,9 @@
     color: $color-tuna;
     font-size: 1.2rem;
     padding-top: .25rem;
+    &:hover {
+      color: $color-pink;
+    }
     @include tablet {
       font-size: 2.25rem;
       padding-top: 1.25rem;
@@ -112,11 +120,11 @@
   &__button {
     border: none;
     color: $color-tuna;
-    background-color: $color-white;
+    background-color: $color-light-green;
     &--special {
       border: none;
       color: $color-tuna;
-      background-color: $color-white;
+      background-color: $color-light-green;
     }
   }
 }

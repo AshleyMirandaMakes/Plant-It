@@ -11,10 +11,6 @@ class FavoritePlantsPage extends Component {
     favoritePlants : [],
   };
 
-  //make a get req to the favorite plants
-  //map through the response
-  //put it in a plantCard Component
-
   componentDidMount() {
     const token = sessionStorage.getItem("token");
 
@@ -29,7 +25,7 @@ class FavoritePlantsPage extends Component {
               },
             })
       .then((response) => {
-        console.log(response.data)
+        //console.log(response.data)
         this.setState({
           isLoggedIn : true,
           user: response.data[0],
@@ -56,8 +52,8 @@ class FavoritePlantsPage extends Component {
   }
 
   //console.log(this.state.plants)
-  console.log("the current user", this.state.user)
-  console.log("the current user's plants", this.state.favoritePlants)
+  //console.log("the current user", this.state.user)
+  //console.log("the current user's plants", this.state.favoritePlants)
 
     return (
       <div className="favoritePlants">

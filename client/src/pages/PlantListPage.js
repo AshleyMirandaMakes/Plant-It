@@ -9,7 +9,8 @@ class PlantListPage extends Component {
     isLoggedIn: false,
     user: null,
     plants: [],
-    favoritePlants : [],
+    "favoritePlants": [],
+    isFavorite : ""
   };
 
   isFavorite = (id) => {
@@ -32,8 +33,9 @@ class PlantListPage extends Component {
             })
       .then((response) => {
         this.setState({
-          plants: response.data,
-          user: response.data,
+          user: response.data[0],
+          favoritePlants : response.data[1],
+          plants: response.data[2],
           isLoggedIn : true
         });
     })
@@ -45,33 +47,40 @@ class PlantListPage extends Component {
     });
   };
 
-  favoriteHandler = (plant) => {
+  
+
+  favoriteHandler = (id) => {
     const token = sessionStorage.getItem("token");
+    console.log(id)
 
     if (!token) {
       return this.setState({ isLoggedIn: false });
-    }
-
-    console.log(plant.id)
-    console.log(this.state.isFavorite)
-    // make a post req with headers
-    // send the favorite list back to state: this.setState to 
+    };
+    
+    this.setState({
+      id : this.isFavorite,
+    })
+  
+    // make post req with favorite plants status
     axios
-      .post(`http://localhost:8080/api/favoritePlants`, {
+      .post(`http://localhost:8080/api/favoritePlants`,  
+        { id : id },
+        {
         headers: {
           Authorization: `Bearer ${token}`,
-              },
+              }, 
             })
             .then((response) => {
               console.log(response)
               this.setState({
+                 favoritePlants : response.data,
               });
           })
-  }
+        }
   
 
  render() {
-   console.log(this.state.user)
+  // console.log(this.state.user)
   if (!this.state.user) {
     return (
         <main className="mainPage">
@@ -80,8 +89,9 @@ class PlantListPage extends Component {
     );
   }
 
-  // console.log(this.state.plants)
-  // console.log(this.state.user)
+  // console.log("is Favorite?" , this.state.isFavorite)
+  console.log(this.state.plants)
+  console.log(this.state.user)
 
   return (
     <div className="plantList">
@@ -95,7 +105,12 @@ class PlantListPage extends Component {
               difficulty={plant.difficulty}
               size={plant.size}
               favoriteHandler={this.favoriteHandler}
-              isFavorite={this.isFavorite(plant.id)}
+              // isFavorite={this.isFavorite(plant.id)}
+              isFavorite={
+                this.state.favoritePlants.find((favoritePlant) => {
+                  return ( favoritePlant.id === plant.id )
+                 })
+              }
             />
           ))}
     </div>

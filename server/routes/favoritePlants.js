@@ -10,9 +10,9 @@ function loadUsers() {
   return JSON.parse(fs.readFileSync("./data/users.json"));
 }
 
-function addFavorite(plant) {
-  return fs.writeFileSync("./data/users.json", JSON.stringify(plant));
-}
+// function addFavorite(favoritePlant) {
+//   return fs.writeFileSync("./data/users.json", JSON.stringify(favoritePlant));
+// }
 
 router 
   .get("/", (req, res) => {
@@ -22,10 +22,9 @@ router
     const foundUser = users.find((user) => user.id === req.decoded.id) 
 
     const favoritePlantsId = foundUser.favoritePlants
-    console.log("favorite plants of current user -- object", favoritePlantsId)
+    //console.log("favorite plants of current user -- object", favoritePlantsId)
 
     //---
-
     const favoritePlants = [];
 
 
@@ -36,39 +35,43 @@ router
     favoritePlants.push(favoritePlant)
  }
    
- const getResponse = [ foundUser, favoritePlants]
+    const getResponse = [ foundUser, favoritePlants]
 
-    console.log(getResponse)
+    //console.log(getResponse)
     res.json(getResponse)
   })
 
 
   .post("/", (req, res) => {
-    const { id } = req.body;
-
+    //mightnotneed?
+    const plants = loadPlants();
     const users = loadUsers();
 
+    //which plant id
+    // const { id } = req.body;
+    // console.log("the ID is getting to the server!" , id)
+
+     //which user
     const foundUser = users.find((user) => user.id === req.decoded.id) 
-    
-    const newFavoritePlant = {
-      id,
+
+    //console.log( "this is your found User on the server" ,foundUser)
+
+    usersFavoritePlants = foundUser.favoritePlants
+    //console.log( "this is that users' faves on server" ,usersFavoritePlants)
+
+    const newFavorite ={ 
+      id : id,
     };
 
-    users.foundUser.favoritePlants.push(newFavoritePlant);
-    addFavorite(foundUser);
-    return res.json(addFavoritePlant(foundUser));
+    console.log(newFavorite)
+
+    //add that plant to the user favoritePlants
+    usersFavoritePlants.push(newFavorite)
+
+    //addFavorite(newFavorite);
+
+    //send back faves
+    res.json(usersFavoritePlants);
   })
-
-  
-
-//post request
-//which user
-//which plant id
-//add that plant to the user favoritePlants
-//send back faves
-
-//get req to be reached from fave plants page
-
-
 
 module.exports = router;

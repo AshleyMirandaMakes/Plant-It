@@ -2,12 +2,12 @@ import Nav from "../components/Nav/Nav";
 import "./FavoritePlantsPage.scss"
 import axios from "axios";
 import { Component } from "react";
+import PlantCard from "../components/PlantCard/PlantCard"
 
 class FavoritePlantsPage extends Component {
   state = {
     isLoggedIn: false,
     user: null,
-    plants: [],
     favoritePlants : [],
   };
 
@@ -29,16 +29,14 @@ class FavoritePlantsPage extends Component {
               },
             })
       .then((response) => {
+        console.log(response.data)
         this.setState({
-          user : response.data,
-          isLoggedIn : true
-        });
+          isLoggedIn : true,
+          user: response.data[0],
+          favoritePlants : response.data[1]
+        })
     })
-    // .then((response) => {
-    //   this.setState({
-    //     favoritePlants : response.data,
-    //   });
-    // })
+   
     .catch((error) => {
         this.setState({
             isLoggedIn: false,
@@ -61,12 +59,19 @@ class FavoritePlantsPage extends Component {
   console.log("the current user", this.state.user)
   console.log("the current user's plants", this.state.favoritePlants)
 
-
-
     return (
       <div className="favoritePlants">
       <Nav/>
-       <h1>Hi from the favorite plants page</h1>
+      {this.state.favoritePlants.map((plant) => 
+        <PlantCard 
+          id={plant.id}
+          image={plant.image}
+          commonName={plant.commonName}
+          isFavorite={plant.isFavorite}
+          difficulty={plant.difficulty}
+          size={plant.size}
+        />
+      )}
       </div>
     )
   }

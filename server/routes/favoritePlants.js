@@ -16,16 +16,32 @@ function addFavorite(plant) {
 
 router 
   .get("/", (req, res) => {
-    // const plants = loadPlants();
-    // const users = loadUsers();
+    const users = loadUsers();
+    const plants = loadPlants();
 
-    // const foundUser = users.find((user) => user.id === req.decoded.id) 
+    const foundUser = users.find((user) => user.id === req.decoded.id) 
 
-    // const favoritePlantsId = foundUser.favoritePlants
-    // console.log("favorite plants of current user -- object", favoritePlantsId)
+    const favoritePlantsId = foundUser.favoritePlants
+    console.log("favorite plants of current user -- object", favoritePlantsId)
 
-    // res.json(foundUser)
+    //---
+
+    const favoritePlants = [];
+
+
+    for ( const foundId of favoritePlantsId) {
+     const favoritePlant = plants.find((plant) => {
+       return( plant.id === foundId.id)
+    })
+    favoritePlants.push(favoritePlant)
+ }
+   
+ const getResponse = [ foundUser, favoritePlants]
+
+    console.log(getResponse)
+    res.json(getResponse)
   })
+
 
   .post("/", (req, res) => {
     const { id } = req.body;
@@ -37,7 +53,6 @@ router
     const newFavoritePlant = {
       id,
     };
-
 
     users.foundUser.favoritePlants.push(newFavoritePlant);
     addFavorite(foundUser);

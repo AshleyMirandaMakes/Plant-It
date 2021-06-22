@@ -56,10 +56,11 @@ class PlantListPage extends Component {
     if (!token) {
       return this.setState({ isLoggedIn: false });
     };
-    
+
     this.setState({
       id : this.isFavorite,
     })
+    console.log(this.state.isFavorite)
  
       axios
       .post(`http://localhost:8080/api/favoritePlants`,  
@@ -78,6 +79,7 @@ class PlantListPage extends Component {
         }
 
 toggleIsFavorite = (id) => {
+
   const updatedFavoritePlants = this.state.favoritePlants
   .map((favoritePlant) => {
     if (favoritePlant.id === id) {

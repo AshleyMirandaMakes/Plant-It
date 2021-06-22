@@ -49,8 +49,17 @@ router
     const newFavorite ={ 
       id : id,
     };
+
+    // console.log("newFavorite.id", newFavorite.id);
+    // console.log("usersFavoritePlants.id", usersFavoritePlants.id)
+    
    
-    usersFavoritePlants.push(newFavorite);
+    // if ( newFavorite.id === usersFavoritePlants.id) {
+    //   usersFavoritePlants.pop(newFavorite)
+    // } else {
+    //   usersFavoritePlants.push(newFavorite);
+    //
+   usersFavoritePlants.push(newFavorite);
 
     //rewrite the current user in the users array
       users.find((user) => {

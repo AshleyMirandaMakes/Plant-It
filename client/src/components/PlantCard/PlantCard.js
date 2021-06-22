@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import FilledStar from "../../assets/images/icons/star-filled-final.svg";
-import Star from "../../assets/images/icons/star-empty-final.svg";
+import FilledStar from "../../assets/images/icons/new-star.svg";
+import Star from "../../assets/images/icons/new-star-empty.svg";
 import PlantDetailsPage from "../../pages/PlantDetailsPage"
 import './PlantCard.scss';
 

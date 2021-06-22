@@ -10,9 +10,10 @@ function loadUsers() {
   return JSON.parse(fs.readFileSync("./data/users.json"));
 }
 
-// function addFavorite(favoritePlant) {
-//   return fs.writeFileSync("./data/users.json", JSON.stringify(favoritePlant));
-// }
+function updateFavorites(favoritePlant) {
+  return fs.writeFileSync("./data/users.json", JSON.stringify(favoritePlant));
+}
+
 
 router 
   .get("/", (req, res) => {
@@ -43,32 +44,39 @@ router
 
 
   .post("/", (req, res) => {
-    //mightnotneed?
-    const plants = loadPlants();
     const users = loadUsers();
 
     //which plant id
-    // const { id } = req.body;
+    const { id } = req.body;
     // console.log("the ID is getting to the server!" , id)
 
      //which user
     const foundUser = users.find((user) => user.id === req.decoded.id) 
-
-    //console.log( "this is your found User on the server" ,foundUser)
+    console.log( "this is your found User on the server" ,foundUser)
 
     usersFavoritePlants = foundUser.favoritePlants
-    //console.log( "this is that users' faves on server" ,usersFavoritePlants)
+    console.log( "this is that users' faves on server" ,usersFavoritePlants)
 
-    const newFavorite ={ 
+    // const newFavorite ={ 
+    //   id : id,
+    // };
+
+    usersFavoritePlants.push({
       id : id,
-    };
+    })
 
-    console.log(newFavorite)
+    //usersFavoritePlants.filter
+    
+    //console.log(newFavorite)
 
     //add that plant to the user favoritePlants
-    usersFavoritePlants.push(newFavorite)
+    // usersFavoritePlants.push(newFavorite)
 
-    //addFavorite(newFavorite);
+    console.log(usersFavoritePlants);
+
+    //addFavorite(newFavorite)
+
+    updateFavorites(usersFavoritePlants);
 
     //send back faves
     res.json(usersFavoritePlants);

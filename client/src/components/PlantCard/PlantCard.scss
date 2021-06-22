@@ -81,14 +81,21 @@
     flex-direction: row;
   }
   &__icon {
-    padding-top: 15px;
     width: 35px;
+    margin-top: -.15rem;
     background-color: $color-light-green;
     border: 1px solid $color-light-green; 
+    @include tablet{
+      margin-top: 1rem;
+    }
     &--special {
-      width: 50px;
+      margin-top: -.15rem;
+      width: 35px;
       background-color: $color-light-green;
       color: $color-tuna;
+      @include tablet{
+        margin-top: 1rem;
+      }
     }
   }
   &__heading{
@@ -110,7 +117,7 @@
     padding-top: .5rem;
     @include tablet {
       font-size: 1.75rem;
-      padding-top: 1.75rem;
+      padding-top: 1.25rem;
     }
   }
   &__details {

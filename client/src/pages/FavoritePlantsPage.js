@@ -9,6 +9,7 @@ class FavoritePlantsPage extends Component {
     isLoggedIn: false,
     user: null,
     favoritePlants : [],
+    isFavorite: "",
   };
 
   componentDidMount() {
@@ -29,7 +30,8 @@ class FavoritePlantsPage extends Component {
         this.setState({
           isLoggedIn : true,
           user: response.data[0],
-          favoritePlants : response.data[1]
+          favoritePlants : response.data[1],
+          isFavorite: true,
         })
     })
    

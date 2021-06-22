@@ -6,9 +6,22 @@
   width: 100%;
   background-color: $color-light-green;
   &__container{
+    @include margin-auto;
     @include flex-center;
+    padding: .5rem;
     display: flex;
     flex-direction: column;
+    max-width: 400px;
+    @include mid-mobile {
+      max-width: 550px;
+      padding: 1rem;
+    }
+    @include tablet {
+      max-width: 800px;
+    }
+    @include desktop {
+      max-width: 1000px;
+    }
   }
   &__title{
     @include font-bold;
@@ -31,6 +44,9 @@
   &__credit {
     @include font-light-italic;
     @include flex-center;
+  }
+  &__list {
+    @include list-reset;
   }
   &__item {
     padding: 1rem;

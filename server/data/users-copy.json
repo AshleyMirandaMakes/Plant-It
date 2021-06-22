@@ -11,6 +11,6 @@
     "firstName": "Chris",
     "email": "chris@gmail.com",
     "password": "$2b$06$yg8fyq4C8xN37Iwc1TGkZ.B7SDntkfbiMOnjfNqY9LRKZ1Q9WyMzO",
-    "favoritePlants": []
+    "favoritePlants": [{"id":"5"},{"id":"11"},{"id":"1"},{"id":"3"}]
   }
 ]

@@ -12,5 +12,6 @@
     "email": "chris@gmail.com",
     "password": "$2b$06$yg8fyq4C8xN37Iwc1TGkZ.B7SDntkfbiMOnjfNqY9LRKZ1Q9WyMzO",
     "favoritePlants": [{"id":"5"},{"id":"11"},{"id":"1"},{"id":"3"}]
-  }
+  },
+  {"id":"e0c16d8a-4bb1-4815-9cb9-e38ce98ee56b","firstName":"Mary","email":"mary@gmail.com","password":"$2b$06$xznsT9ccPaXsltokNuL17OQcRdXxFSzu3SZ8uRHsaWh.a8d1PHi2a","favoritePlants":[{"id":"1"}]}
 ]

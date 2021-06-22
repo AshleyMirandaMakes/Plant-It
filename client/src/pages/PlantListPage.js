@@ -51,7 +51,6 @@ class PlantListPage extends Component {
 
   favoriteHandler = (id) => {
     const token = sessionStorage.getItem("token");
-    console.log(id)
 
     if (!token) {
       return this.setState({ isLoggedIn: false });
@@ -60,9 +59,8 @@ class PlantListPage extends Component {
     this.setState({
       id : this.isFavorite,
     })
-  
-    // make post req with favorite plants status
-    axios
+ 
+      axios
       .post(`http://localhost:8080/api/favoritePlants`,  
         { id : id },
         {
@@ -73,10 +71,12 @@ class PlantListPage extends Component {
             .then((response) => {
               console.log(response)
               this.setState({
-                 favoritePlants : response.data,
+                 favoritePlants : response.data[1],
               });
           })
         }
+
+
   
 
  render() {

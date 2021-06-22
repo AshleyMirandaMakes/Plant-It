@@ -64,10 +64,8 @@ router
    
     updateUsers(users);
 
-    const getResponse = [ foundUser, usersFavoritePlants ]
-    res.json(getResponse);
+    //edit this
+    res.json(usersFavoritePlants);
   })
-
-  
 
 module.exports = router;

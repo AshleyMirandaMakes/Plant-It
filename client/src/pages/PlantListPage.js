@@ -36,7 +36,8 @@ class PlantListPage extends Component {
           user: response.data[0],
           favoritePlants : response.data[1],
           plants: response.data[2],
-          isLoggedIn : true
+          isFavorite: response.data[1],
+          isLoggedIn : true,
         });
     })
     .catch((error) => {
@@ -71,16 +72,40 @@ class PlantListPage extends Component {
             .then((response) => {
               console.log(response)
               this.setState({
-                 favoritePlants : response.data[1],
+                 favoritePlants : response.data,
               });
           })
         }
 
+toggleIsFavorite = (id) => {
+  const updatedFavoritePlants = this.state.favoritePlants
+  .map((favoritePlant) => {
+    if (favoritePlant.id === id) {
+      if (favoritePlant.unclicked) {
+        return null;
+      } else {
+        return {
+          ...favoritePlant,
+          isFavorite : true
+        };
+      }
+    } else {
+      return this.state.favoritePlants;
+    }
+  })
+  .filter((favoritePlant) => favoritePlant !== null);
+  console.log(updatedFavoritePlants)
+  this.setState(
+    {
+      isFavorite: updatedFavoritePlants,
+    }
+  );
+}
 
-  
 
  render() {
-  // console.log(this.state.user)
+  console.log("these are the favorite", this.state.isFavorite)
+
   if (!this.state.user) {
     return (
         <main className="mainPage">
@@ -89,9 +114,6 @@ class PlantListPage extends Component {
     );
   }
 
-  // console.log("is Favorite?" , this.state.isFavorite)
-  console.log(this.state.plants)
-  console.log(this.state.user)
 
   return (
     <div className="plantList">

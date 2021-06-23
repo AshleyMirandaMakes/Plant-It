@@ -6,12 +6,19 @@
   flex-direction: column;
   padding: .5rem 1rem;
   width: 100%;
+  @include tablet{
+    padding: 1rem 1.5rem;
+  }
   &__label{
     @include margin-auto;
     @include flex-center;
     padding-bottom: 4px;
     color: $color-moss;
     font-size: 1.25rem;
+    @include tablet{
+      font-size: 1.5rem;
+      padding-bottom: 6px;
+    }
   }
   &__input {
     @include margin-auto;
@@ -19,6 +26,10 @@
     border: 1px solid $color-moss;
     border-radius: 4px;
     padding: .25rem;
-    //background-color: $color-moss;
+    opacity: 60%;
+    @include tablet{
+      padding: .5rem;
+      width: 300px;
+    }
   }
 }

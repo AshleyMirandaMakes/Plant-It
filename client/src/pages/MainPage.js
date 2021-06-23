@@ -1,15 +1,14 @@
 import "./MainPage.scss";
-import { Component , Link, Redirect } from "react";
+import { Component , Redirect } from "react";
 import axios from "axios";
 import MainNav from "../components/MainNav/MainNav"
 import Nav from "../components/Nav/Nav";
-import Footer from "../components/Footer/Footer";
 
 class MainPage extends Component {
   state = {
     isLoggedIn : false,
     user: null,
-    //toSignIn : false,
+    toSignIn : false,
     // isMainPage : true,
   }
 
@@ -39,20 +38,23 @@ class MainPage extends Component {
         });
       }
    
-  // handleLogout = () => {
-  //       sessionStorage.removeItem("token");
-  //       this.setState({
-  //           user: null,
-  //           isLoggedIn: false,
-  //           toSignIn : true,
-  //       });
-  //     };
+  handleLogout = () => {
+        sessionStorage.removeItem("token");
+        this.setState({
+            toSignIn : true,
+            user: null,
+            isLoggedIn: false,
+        });
+      };
 
 
   render () {
-  // if (this.state.toSignIn) {
-  //     return <Redirect to={"/"} />;
-  // }
+  // console.log(this.state.toSignIn)
+  // console.log(this.props.history)
+ 
+  if (this.state.toSignIn) {
+    this.props.history.push("/")
+   }
 
   if (!this.state.user) {
       return (

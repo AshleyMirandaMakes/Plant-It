@@ -8,7 +8,8 @@
     @include margin-auto;
   }
   &__title-container{
-    padding: 3rem 0;
+    //padding: 3rem 0;
+    padding-top: 10%;
   }
   &__title  {
     @include flex-center;
@@ -18,7 +19,8 @@
   }
   &__heading {
     @include flex-center;
-    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    padding: 1.5rem 0;
   }
   &__logout {
     @include margin-auto;
@@ -26,6 +28,7 @@
     @include link-reset;
     @include font-light;
     margin-top: 3rem;
+    padding: .25rem;
     font-size: 1.1rem;
     color: $color-tuna;
     background-color: $color-white;

@@ -22,9 +22,11 @@
   }
   &__form{
     @include margin-auto;
-   // padding-top: .5rem;
-    padding-top: 4rem;
+    padding-top: 33%;
     width: 100%;
+    @include tablet {
+      padding-top: 25%;
+    }
   }
   &__title {
     @include flex-center;
@@ -41,22 +43,39 @@
     margin-top: .5rem;
     border: 0px;
     border-radius: 4px;
+    @include tablet {
+      margin-top: .5rem;
+      font-size: 1.25rem;
+    }
   }
   &__message {
     @include flex-center;
     padding-top: .5rem;
+    @include tablet {
+      font-size: 1.25rem;
+    }
   }
   &__details {
     @include flex-center;
     @include margin-auto;
-    @include font-regular;
-    // margin-top: 1.5rem;
+    @include font-thin;
     margin-top: 3.5rem;
+    @include tablet {
+      margin-top: 1.5rem; 
+     // @include font-regular;
+      font-size: 1.25rem;
+    }
   }
   &__link {
     @include link-reset;
-    @include font-regular;
+    @include font-thin;
     padding: 0 .25rem;
+    margin-left: .5rem;
     color: $color-pink;
+    @include tablet {
+      @include font-bold;
+      font-size: 1.5rem;
+      padding: 0;
+    }
   }
 }

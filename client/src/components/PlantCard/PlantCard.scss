@@ -123,6 +123,10 @@
   &__details {
     @include font-thin; 
     color: $color-juniper;
+    &--special {
+      @include font-regular;
+      padding-left: .5rem;
+    }
   }
   &__button {
     border: none;

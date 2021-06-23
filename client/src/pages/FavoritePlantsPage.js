@@ -9,9 +9,10 @@ class FavoritePlantsPage extends Component {
     isLoggedIn: false,
     user: null,
     favoritePlants : [],
-    isFavorite: "",
-  };
+  //   isFavorite: [],
+   };
 
+  
   componentDidMount() {
     const token = sessionStorage.getItem("token");
 
@@ -34,6 +35,7 @@ class FavoritePlantsPage extends Component {
           isFavorite: true,
         })
     })
+
    
     .catch((error) => {
         this.setState({
@@ -53,9 +55,7 @@ class FavoritePlantsPage extends Component {
     );
   }
 
-  //console.log(this.state.plants)
-  //console.log("the current user", this.state.user)
-  //console.log("the current user's plants", this.state.favoritePlants)
+ 
 
     return (
       <div className="favoritePlants">

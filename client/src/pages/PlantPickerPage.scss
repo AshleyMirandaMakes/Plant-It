@@ -15,19 +15,19 @@
     @include tablet {
       font-size: 2rem;
     }
-  }
- 
+  } 
   &__header {
     @include font-abril;
     @include flex-center;
     text-align: center;
     color: $color-white;
-    padding: 1rem;
     margin: 1rem;
+    margin-top: 7%;
+    padding: 1rem;
     font-size: 1.7rem;
     opacity: 90%;
     @include tablet {
-      font-size: 2.25rem;
+      font-size: 2.35rem;
       padding: 2rem;
     }
     &--special{

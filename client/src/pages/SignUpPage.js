@@ -1,6 +1,6 @@
 import "./SignUpPage.scss";
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import Input from "../components/Input/Input";
 
@@ -31,6 +31,8 @@ class Signup extends Component {
 
   render() {
     return (
+      <>
+        {this.state.success && <Redirect to="/" push />}
       <main className="signUp">
         <section className="signUp__container">
         <form className="signUp__form" onSubmit={this.handleSubmit}>
@@ -48,6 +50,7 @@ class Signup extends Component {
           </p>
           </section>
             </main>
+         </>   
         );
     }
 }

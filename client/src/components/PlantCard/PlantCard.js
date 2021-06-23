@@ -16,6 +16,8 @@ function PlantCard (props){
     isFavorite,
   } = props
 
+  console.log(isFavorite)
+
   return(
     <section className="plantCard">
         <div className="plantCard__container">
@@ -28,8 +30,8 @@ function PlantCard (props){
               {isFavorite? <button class="plantCard__button--special" onClick={() => {favoriteHandler(id)}}><img className="plantCard__icon--special" src={FilledStar} alt="favorite icon"/></button> : <button class="plantCard__button" onClick={() => {favoriteHandler(id)}}><img className="plantCard__icon" src={Star} alt="favorite icon"/></button> }
             </div>
           <div className="plantCard__subheadings">
-             <h5 className="plantCard__details">Difficulty: {difficulty}</h5>
-             <h5 className="plantCard__details"> Size: {size}</h5>
+             <h5 className="plantCard__details">Difficulty:<span className="plantCard__details--special">{difficulty}</span></h5>
+             <h5 className="plantCard__details">Size:<span className="plantCard__details--special">{size}</span></h5>
           </div>
           </div>
         </div>

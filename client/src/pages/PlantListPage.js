@@ -57,10 +57,15 @@ class PlantListPage extends Component {
       return this.setState({ isLoggedIn: false });
     };
 
-    this.setState({
-      id : this.isFavorite,
-    })
-    console.log(this.state.isFavorite)
+    // make a delete req at some point
+    // if (this.state.isFavorite) {
+    //   this.setState({
+    //      isFavorite : null,
+    //   })
+    //   console.log(this.state.isFavorite)
+    // }
+
+  
  
       axios
       .post(`http://localhost:8080/api/favoritePlants`,  

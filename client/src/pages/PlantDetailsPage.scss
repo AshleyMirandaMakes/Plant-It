@@ -18,6 +18,10 @@
       padding: 1rem 2rem;
       height: 100vh;
     }
+    @include desktop {
+      max-width: 1000px;
+      padding: 4rem 1rem;
+    }
   }
   &__top-container {
     width: 100%;
@@ -58,12 +62,17 @@
     padding: 1rem .5rem;
     margin: .75rem 0;
     border-bottom: 1px solid $color-tuna;
-
+     @include tablet {
+      font-size: 3.5rem;
+     }
   }
   &__sub-heading{
     @include flex-center;
     padding: .75rem;
     font-size: 1.25rem;
+    @include tablet {
+      font-size: 1.5rem;
+     }
   }
   &__special {
     @include font-regular;
@@ -79,6 +88,9 @@
     padding: .5rem;
     font-size: 1.5rem;
     padding-top: .75rem;
+    @include desktop {
+      font-size: 1.75rem;
+    }
     //border-bottom: 1px solid $color-white;
   }
   &__description{
@@ -91,6 +103,8 @@
     @include tablet {
       @include margin-auto;
       padding: .75rem 1rem;
+      font-size: 1.25rem;
+      line-height: 1.15rem;
     }
   }
   &__sub-container {

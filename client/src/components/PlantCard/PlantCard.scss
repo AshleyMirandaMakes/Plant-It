@@ -56,12 +56,14 @@
     margin: .5rem;
     height: 70px;
     width: 70px;
+    //margin-left: 1rem;
     background-color: $color-white;
     border-radius: 50%;
     @include tablet {
       width: 40%;
       height: 140px;
       width: 140px;
+      //margin-left: 1.5rem;
     }
   }
   &__right{

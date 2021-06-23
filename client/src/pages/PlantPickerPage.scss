@@ -39,7 +39,9 @@
     @include flex-center;
     @include font-light;
     @include link-reset;
-    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    font-size: 1.25rem;
     &:hover{
       @include font-light-italic
     }

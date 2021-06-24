@@ -64,7 +64,7 @@ class MainPage extends Component {
       );
   }
 
-  const { firstName } = this.state.user;
+  const { userName } = this.state.user;
 
   return (
     <div className="mainPage">
@@ -72,7 +72,7 @@ class MainPage extends Component {
       <div className="mainPage__container">
         <div className="mainPage__title-container">
           <h1 className="mainPage__title">Welcome back,</h1>
-          <h1 className="mainPage__title">{firstName}!</h1>
+          <h1 className="mainPage__title">{userName}!</h1>
         </div>
         <h2 className="mainPage__heading">What would you like to do?</h2>
         <MainNav/>

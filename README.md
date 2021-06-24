@@ -1,7 +1,7 @@
 # Plant-It
 
 Hey there! Thanks for checking out this project.
-This is directed at helping users findplants that are suited to their home environment. 
+This is directed at helping users find plants that are suited to their home environment. 
 
 
 

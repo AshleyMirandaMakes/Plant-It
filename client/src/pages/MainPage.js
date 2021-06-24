@@ -3,6 +3,7 @@ import { Component , Redirect } from "react";
 import axios from "axios";
 import MainNav from "../components/MainNav/MainNav"
 import Nav from "../components/Nav/Nav";
+import Footer from "../components/Footer/Footer"
 
 class MainPage extends Component {
   state = {
@@ -78,6 +79,7 @@ class MainPage extends Component {
         <MainNav/>
         <button className="mainPage__logout" onClick={this.handleLogout}>log out</button>
       </div>
+    <Footer />
     </div>
   )
   }

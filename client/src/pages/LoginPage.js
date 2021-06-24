@@ -4,6 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import Input from "../components/Input/Input";
 import "./LoginPage.scss";
+import Footer from "../components/Footer/Footer";
 
 class Login extends Component {
     state = {
@@ -49,6 +50,7 @@ class Login extends Component {
                     Need an account? <Link to="/signUp" className="login__link">Sign up</Link>
                 </p>
                 </section>
+                <Footer />
             </main>
         );
     }

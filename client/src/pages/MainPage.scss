@@ -35,6 +35,8 @@
     border: none;
     &:hover {
       @include font-light-italic;
+      color: $color-pink;
+      font-size: 1.35rem;
     }
   }
 

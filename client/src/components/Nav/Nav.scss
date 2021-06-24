@@ -1,5 +1,6 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/variables' as *;
+@use '../../partials/resets' as *;
 
 .nav {
   width: 100%;
@@ -17,12 +18,15 @@
     @include link-reset;
     color: $color-pink;
     padding-left: .5rem;
+    &:hover{
+      color: $color-baltic-sea;
+    }
     @include tablet{
       font-size: 1.25rem;
     }
     &--special {
       @include font-abril;
-      color: $color-moss;
+      color: $color-juniper;
       padding-left: 0;
       font-size: 1rem;
       @include tablet{

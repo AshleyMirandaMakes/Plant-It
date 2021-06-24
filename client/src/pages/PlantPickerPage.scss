@@ -4,39 +4,84 @@
 
 .plantPicker {
   width: 100%;
-  //background-image: url('../assets/images/mosaic-background.jpg'); 
-  //background-size: cover;
   background-color: $color-moss;
   padding: 1rem;
+  min-height: 100vh;
   &__title {
-    //@include flex-center;
+    @include flex-center;
+    @include font-abril;
+    font-size: 1.7rem;
     margin: 1rem;
-  }
+    @include tablet {
+      font-size: 2rem;
+    }
+  } 
   &__header {
     @include font-abril;
     @include flex-center;
+    text-align: center;
     color: $color-white;
-    padding: 1rem;
     margin: 1rem;
+    margin-top: 7%;
+    padding: 1rem;
     font-size: 1.7rem;
-    opacity: 80%;
-    // background-color: $color-tuna
+    opacity: 90%;
+    @include tablet {
+      font-size: 2.35rem;
+      padding: 2rem;
+    }
+    &--special{
+      padding-bottom: .25rem;
+      margin-bottom: 0;
+    }
+    }
+  &__link {
+    @include flex-center;
+    @include font-light;
+    @include link-reset;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    font-size: 1.25rem;
+    &:hover{
+      @include font-light-italic
+    }
   }
   &__button-container{
+    @include margin-auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     opacity: 70%;
-  }
+    min-height: 312px;
+    @include mid-mobile{
+      max-width: 500px;
+    }
+    &--special {
+      @include margin-auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      opacity: 70%;
+      max-height: 300px;
+      width: 100%;
+      @include mid-mobile{
+        max-width: 500px;
+      }
+    }
+}
   &__button {
     @include flex-center;
     @include font-light;
     background-color: $color-tuna;
     color: $color-white;
+    min-width: auto;
     padding: 1.5rem;
     margin: 1rem 2rem;
     font-size: 1.25rem;
     border: none;
     border-radius: 4px;
+    @include tablet {
+      font-size: 1.5rem;
+    }
   }
 }

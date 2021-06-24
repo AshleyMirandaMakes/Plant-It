@@ -24,7 +24,7 @@ class Nav extends Component {
     return (
       <nav className='nav'>
         <div className='nav__container'>
-          <Link to={"/"} className='nav__link--special nav__link'>
+          <Link to={"/main"} className='nav__link--special nav__link'>
             Plant-It
           </Link>
           <div className='nav__link-container'>
@@ -42,6 +42,11 @@ class Nav extends Component {
               to={"/favoritePlants"}
             >
               favorites 
+            </Link>
+            <Link className='nav__link'
+              to={"/careTips"}
+            >
+              care
             </Link>
           </div>
         </div>

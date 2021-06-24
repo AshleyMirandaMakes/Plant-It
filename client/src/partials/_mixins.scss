@@ -40,10 +40,7 @@
   margin: 0 auto;
 }
 
-@mixin margin-pad-zero {
-  margin: 0;
-  padding: 0;
-}
+
 
 @mixin status-tag {
   display: flex;
@@ -66,6 +63,16 @@
   font-family: "Lato Hairline";
   font-weight: 300;
   font-style: italic
+}
+
+@mixin font-thin {
+  font-family: "Lato";
+  font-weight: 300;
+}
+
+@mixin font-regular {
+  font-family: "Lato";
+  font-weight: 400;
 }
 
 @mixin font-bold {

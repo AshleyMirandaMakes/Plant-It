@@ -4,8 +4,38 @@
 
 .mainPage{
   width: 100%;
+  &__container{
+    @include margin-auto;
+  }
+  &__title-container{
+    //padding: 3rem 0;
+    padding-top: 10%;
+  }
   &__title  {
     @include flex-center;
-    font-size: 1.5rem;
+    @include font-abril;
+    color: $color-tuna;
+    font-size: 2rem;
   }
+  &__heading {
+    @include flex-center;
+    font-size: 1.5rem;
+    padding: 1.5rem 0;
+  }
+  &__logout {
+    @include margin-auto;
+    @include flex-center;
+    @include link-reset;
+    @include font-light;
+    margin-top: 3rem;
+    padding: .25rem;
+    font-size: 1.1rem;
+    color: $color-tuna;
+    background-color: $color-white;
+    border: none;
+    &:hover {
+      @include font-light-italic;
+    }
+  }
+
 }

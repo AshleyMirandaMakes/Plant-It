@@ -6,6 +6,7 @@ import PlantPickerPage from "./pages/PlantPickerPage";
 import PlantListPage from "./pages/PlantListPage";
 import PlantDetailsPage from "./pages/PlantDetailsPage";
 import FavoritePlantsPage from "./pages/FavoritePlantsPage";
+import CarePage from "./pages/CarePage";
 
 import "./App.scss"
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/allPlants" component={PlantListPage} exact/>
         <Route path="/allPlants/:id" component={PlantDetailsPage} exact/>
         <Route path="/favoritePlants" component={FavoritePlantsPage} exact/> 
+        <Route path="/careTips" component={CarePage} exact/>
         <Route path="/signUp" component={SignUpPage} exact/> 
       </Switch>
     </Router>

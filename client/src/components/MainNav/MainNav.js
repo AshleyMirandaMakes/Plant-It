@@ -5,7 +5,6 @@ function MainNav () {
   return (
     <nav className='mainNav'>
     <div className='mainNav__container'>
-      <div className='mainNav__link-container'>
         <Link className='mainNav__link'
           to={"/plantPicker"}
         >
@@ -14,7 +13,7 @@ function MainNav () {
         <Link className='mainNav__link'
           to={"/allPlants"}
         >
-          See a list off all plants
+          See a list of all plants
         </Link>
         <Link className='mainNav__link'
           to={"/favoritePlants"}
@@ -22,12 +21,11 @@ function MainNav () {
           See a list of your favorite plants
         </Link>
         <Link className='mainNav__link'
-          to={"/"}
+          to={"/careTips"}
         >
           See plant care tips
         </Link>
       </div>
-    </div>
   </nav>
 
 )

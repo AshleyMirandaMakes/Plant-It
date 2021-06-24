@@ -2,34 +2,37 @@
 @use '../partials/variables' as *;
 @use '../partials/resets' as *;
 
-.signup {
+.signUp {
   width: 100%;
-  min-height: 500px;
-  background-image: url('../assets/images/backgrounds/zz-leaves-annie-spratt.jpg');
+  height: 100vh;
+  background-image: url('../assets/images/backgrounds/henry-leaves-bottomleft.jpg');
   background-size: cover;
-  background-position: 100% 0%;
-  //background-color: $color-baltic-sea;
+  background-position: 100% 50%;
+  min-height: 500px;
+  @include mid-mobile{
+    background-position: 60% 70%;
+  }
+  @include tablet {
+    background-position: 60% 80%;
+  }
   &__container { 
     @include margin-auto;
     width: 100%; 
     max-width: 350px;
   }
-  &__heading {
-    @include font-abril;
-    @include flex-center;
-    color: $color-pink; // maybe tuna
-    margin-top: 5rem;
-    padding-bottom: .5rem;
-  }
   &__form{
     @include margin-auto;
+    padding-top: 33%;
     width: 100%;
+    @include tablet {
+      padding-top: 25%;
+    }
   }
   &__title {
     @include flex-center;
     color: $color-tuna;
     padding-bottom: .5rem;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
   }
   &__button {
     @include flex-center;
@@ -37,12 +40,42 @@
     background-color: $color-pink;
     color: $color-white;
     padding: .25rem 1rem;
+    margin-top: .5rem;
     border: 0px;
     border-radius: 4px;
+    @include tablet {
+      margin-top: .5rem;
+      font-size: 1.25rem;
+    }
+  }
+  &__message {
+    @include flex-center;
+    padding-top: .5rem;
+    @include tablet {
+      font-size: 1.25rem;
+    }
   }
   &__details {
     @include flex-center;
     @include margin-auto;
-    margin-top: 1.5rem;
+    @include font-thin;
+    margin-top: 3.5rem;
+    @include tablet {
+      margin-top: 1.5rem; 
+     // @include font-regular;
+      font-size: 1.25rem;
+    }
+  }
+  &__link {
+    @include link-reset;
+    @include font-thin;
+    padding: 0 .25rem;
+    margin-left: .5rem;
+    color: $color-pink;
+    @include tablet {
+      @include font-bold;
+      font-size: 1.5rem;
+      padding: 0;
+    }
   }
 }

@@ -11,65 +11,133 @@
   }
   &__link {
     @include link-reset;
+    width: 100%;
     padding: 0;
     margin: 0;
+    &:hover {
+      color: $color-pink;
+    }
     @include tablet {
       display: flex;
       width: 100%;
     }
   }
   &__container{
+    @include margin-auto;
     width: 100%;
+    min-width: 300px;
     display: flex;
+    background-color: $color-light-green;
+    padding: .5rem 0;
+    max-width: 400px;
     @include tablet {
-      background-color: $color-light-green;
+      min-width: 700px;
+      max-width: 800px;
       padding: 1rem 0;
+    }
+  }
+  &__sub-container{
+    @include margin-auto;
+    display: flex;
+    max-width: 315px;
+    @include mid-mobile{
+      min-width: 370px;
+      max-width: 475px;
+    }
+    @include tablet {
+      min-width: 600px;
+      max-width: 800px;
     }
   }
  
   &__left{
-    width: 30%;
+    @include margin-auto;
+    width: 40%;
     margin: .5rem;
     height: 70px;
     width: 70px;
-    background-color: $color-spanish-green;
+    //margin-left: 1rem;
+    background-color: $color-white;
     border-radius: 50%;
     @include tablet {
-      @include margin-auto;
       width: 40%;
       height: 140px;
       width: 140px;
+      //margin-left: 1.5rem;
     }
   }
   &__right{
+    @include margin-auto;
     max-width: 70%;
     width: 70%;
-    padding: .5rem 0;
+    padding: 1rem .5rem;
+    min-width: 218px;
     @include tablet {
-      @include margin-auto;
       width: 60%;
-      margin-left: 0;
+      //margin-left: 0;
       padding: 1rem 0;
+    }
+  }
+  &__top{
+    display: flex;
+    flex-direction: row;
+  }
+  &__icon {
+    width: 35px;
+    margin-top: -.15rem;
+    background-color: $color-light-green;
+    border: 1px solid $color-light-green; 
+    @include tablet{
+      margin-top: 1rem;
+    }
+    &--special {
+      margin-top: -.15rem;
+      width: 35px;
+      background-color: $color-light-green;
+      color: $color-tuna;
+      @include tablet{
+        margin-top: 1rem;
+      }
     }
   }
   &__heading{
     @include font-abril;
     color: $color-tuna;
+    font-size: 1.2rem;
+    padding-top: .25rem;
+    &:hover {
+      color: $color-pink;
+    }
     @include tablet {
-      font-size: 2rem;
+      font-size: 2.25rem;
+      padding-top: 1.25rem;
     }
   }
   &__subheadings{
     display: flex;
     justify-content: space-between;
     padding-top: .5rem;
-    color: $color-pink;
     @include tablet {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
+      padding-top: 1.25rem;
     }
   }
   &__details {
-    @include font-light; // make thicker
+    @include font-thin; 
+    color: $color-juniper;
+    &--special {
+      @include font-regular;
+      padding-left: .5rem;
+    }
   }
-
+  &__button {
+    border: none;
+    color: $color-tuna;
+    background-color: $color-light-green;
+    &--special {
+      border: none;
+      color: $color-tuna;
+      background-color: $color-light-green;
+    }
+  }
 }

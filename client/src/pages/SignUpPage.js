@@ -1,6 +1,6 @@
 import "./SignUpPage.scss";
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import Input from "../components/Input/Input";
 
@@ -31,23 +31,26 @@ class Signup extends Component {
 
   render() {
     return (
-      <main className="signup">
-        <section className="signup__container">
-        <form className="signup__form" onSubmit={this.handleSubmit}>
-          <h1 className="signup__title">Sign up</h1>
-            <Input type="text" name="firstName" label="FirstName" />
+      <>
+        {this.state.success && <Redirect to="/" push />}
+      <main className="signUp">
+        <section className="signUp__container">
+        <form className="signUp__form" onSubmit={this.handleSubmit}>
+          <h1 className="signUp__title">Sign up</h1>
+            <Input type="text" name="firstName" label="First Name" />
             <Input type="text" name="email" label="Email" />
             <Input type="password" name="password" label="Password" />
             <Input type="password" name="confirmPassword" label="Confirm Password" />
-            <button className="signup__button">Sign up</button>
-            {this.state.success && <div className="signup__message">Signed up!</div>}
-            {this.state.error && <div className="signup__message">{this.state.error}</div>}
+            <button className="signUp__button">Sign up</button>
+            {this.state.success && <div className="signUp__message">Signed up!</div>}
+            {this.state.error && <div className="signUp__message">{this.state.error}</div>}
         </form>
-          <p className="signup__details">
-            Have an account? <Link to="/">Log in</Link>
+          <p className="signUp__details">
+            Have an account? <Link className="signUp__link" to="/">Log in</Link>
           </p>
           </section>
             </main>
+         </>   
         );
     }
 }

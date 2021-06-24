@@ -9,14 +9,20 @@ class PlantListPage extends Component {
     isLoggedIn: false,
     user: null,
     plants: [],
+    "favoritePlants": [],
+    isFavorite : ""
   };
 
+  isFavorite = (id) => {
+    return this.state.favoritePlants.includes(id)
+  }
 
   componentDidMount() {
+
     const token = sessionStorage.getItem("token");
 
     if (!token) {
-        return this.setState({ isLoggedIn: false });
+      return this.setState({ isLoggedIn: false });
     }
 
     axios
@@ -27,9 +33,11 @@ class PlantListPage extends Component {
             })
       .then((response) => {
         this.setState({
-          plants: response.data,
-          user: response.data,
-          isLoggedIn : true
+          user: response.data[0],
+          favoritePlants : response.data[1],
+          plants: response.data[2],
+          isFavorite: response.data[1],
+          isLoggedIn : true,
         });
     })
     .catch((error) => {
@@ -39,9 +47,72 @@ class PlantListPage extends Component {
         console.error(error) 
     });
   };
+
   
 
+  favoriteHandler = (id) => {
+    const token = sessionStorage.getItem("token");
+
+    if (!token) {
+      return this.setState({ isLoggedIn: false });
+    };
+
+    // make a delete req at some point
+    // if (this.state.isFavorite) {
+    //   this.setState({
+    //      isFavorite : null,
+    //   })
+    //   console.log(this.state.isFavorite)
+    // }
+
+  
+ 
+      axios
+      .post(`http://localhost:8080/api/favoritePlants`,  
+        { id : id },
+        {
+        headers: {
+          Authorization: `Bearer ${token}`,
+              }, 
+            })
+            .then((response) => {
+              console.log(response)
+              this.setState({
+                 favoritePlants : response.data,
+              });
+          })
+        }
+
+toggleIsFavorite = (id) => {
+
+  const updatedFavoritePlants = this.state.favoritePlants
+  .map((favoritePlant) => {
+    if (favoritePlant.id === id) {
+      if (favoritePlant.unclicked) {
+        return null;
+      } else {
+        return {
+          ...favoritePlant,
+          isFavorite : true
+        };
+      }
+    } else {
+      return this.state.favoritePlants;
+    }
+  })
+  .filter((favoritePlant) => favoritePlant !== null);
+  console.log(updatedFavoritePlants)
+  this.setState(
+    {
+      isFavorite: updatedFavoritePlants,
+    }
+  );
+}
+
+
  render() {
+  console.log("these are the favorite", this.state.isFavorite)
+
   if (!this.state.user) {
     return (
         <main className="mainPage">
@@ -50,8 +121,6 @@ class PlantListPage extends Component {
     );
   }
 
-  // console.log(this.state.plants)
-  // console.log(this.state.user)
 
   return (
     <div className="plantList">
@@ -64,6 +133,13 @@ class PlantListPage extends Component {
               commonName={plant.commonName}
               difficulty={plant.difficulty}
               size={plant.size}
+              favoriteHandler={this.favoriteHandler}
+              // isFavorite={this.isFavorite(plant.id)}
+              isFavorite={
+                this.state.favoritePlants.find((favoritePlant) => {
+                  return ( favoritePlant.id === plant.id )
+                 })
+              }
             />
           ))}
     </div>

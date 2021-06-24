@@ -3,7 +3,7 @@ const router = express.Router();
 const fs = require("fs");
 
 function loadPlants() {
-  return JSON.parse(fs.readFileSync("./data/plants.json"));
+  return JSON.parse(fs.readFileSync("./data/plants-two.json"));
 }
 
 router

@@ -1,0 +1,23 @@
+@use '../partials/mixins' as *;
+@use '../partials/variables' as *;
+@use '../partials/resets' as *;
+
+.carePage{
+  width: 100%;
+  &__container{
+    @include margin-auto;
+  }
+  &__title-container{
+    padding: 3rem 0;
+  }
+  &__title  {
+    @include flex-center;
+    @include font-abril;
+    color: $color-tuna;
+    font-size: 2rem;
+  }
+  &__heading {
+    @include flex-center;
+    padding-bottom: 1rem;
+  }
+}

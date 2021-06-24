@@ -130,12 +130,12 @@ class PlantPickerPage extends Component {
             <article className="plantCard">
               <Link className="plantCard__link" key={this.state.pickedPlants.id} to={"/allPlants/" + this.state.pickedPlants.id}>
               <div className="plantCard__container">
-                <div className="plantCard__left"></div>
+                <img className="plantCard__left" src={`http://localhost:8080/${this.state.pickedPlants.image}`} alt={this.state.pickedPlants.commonName}/>
                 <div className="plantCard__right">
                   <h3 className="plantCard__heading">{this.state.pickedPlants.commonName}</h3>
                     <div className="plantCard__subheadings">
                      <h5 className="plantCard__details">Difficulty: {this.state.pickedPlants.difficulty}</h5>
-                     <h5 className="plantCard__details"> Size: {this.state.pickedPlants.id}</h5>
+                     <h5 className="plantCard__details"> Size: {this.state.pickedPlants.size}</h5>
                     </div>
                 </div>
                 </div>
@@ -230,7 +230,10 @@ const StepThree = (props) => {
 
   return(
     <div className="plantPicker">
-      <h2 className="plantPicker__header">{currentStep}What type of light will this plant live in?</h2>
+      <div className="plantPicker__link-container">
+        <h2 className="plantPicker__header plantPicker__header--special">{currentStep}What type of light will this plant live in?</h2>
+        <Link className="plantPicker__link" to={'/careTips'}>Need help? Check out the Lighting Guide</Link>
+      </div>
         <div className="plantPicker__button-container">
           <button 
             className="plantPicker__button"
@@ -286,7 +289,7 @@ const StepFive = (props) => {
   return(
     <div className="plantPicker">
       <h2 className="plantPicker__header">{currentStep}Do you need dog-safe plants?</h2>
-        <div className="plantPicker__button-container">
+        <div className="plantPicker__button-container--special">
           <button 
             className="plantPicker__button"
             onClick={()=> {handleClick(true)}}>Yes, please</button>
@@ -309,7 +312,7 @@ const StepSix = (props) => {
   return(
     <div className="plantPicker">
       <h2 className="plantPicker__header">{currentStep}Do you need cat-safe plants?</h2>
-        <div className="plantPicker__button-container">
+        <div className="plantPicker__button-container--special">
           <button 
             className="plantPicker__button"
             onClick={()=> {handleClick(true)}}>Yes, please</button>

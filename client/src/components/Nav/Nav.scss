@@ -6,9 +6,16 @@
   width: 100%;
   background-color: $color-white;
   &__container {
+    @include margin-auto;
     padding: .5rem;
     display: flex;
     justify-content: space-between;
+    @include tablet{
+      max-width: 850px;
+    }
+    @include desktop{
+      max-width: 1400px;
+    }
   }
   &__link-container{
     display: flex;

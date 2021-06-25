@@ -16,7 +16,7 @@ function addUser(users) {
 }
 
 router.post("/signUp", (req, res) => {
-  const { firstName, email, password, confirmPassword } = req.body;
+  const { userName, password, confirmPassword } = req.body;
 
   //password confirmation
   if (password !== confirmPassword ) {
@@ -24,7 +24,7 @@ router.post("/signUp", (req, res) => {
   }
 
   //all fields entered
-  if (!firstName || !email || !password || !confirmPassword) {
+  if (!userName || !password || !confirmPassword) {
     return res.status(400).send("Please enter the required fields.");
   }
 
@@ -38,8 +38,7 @@ router.post("/signUp", (req, res) => {
       //take the new user data, and create a new user w/ id
       const newUser = {
       id: uuidv4(),
-      firstName, 
-      email,
+      userName, 
       password: hashedPassword,
       favoritePlants: []
       }
@@ -56,11 +55,11 @@ router.post("/signUp", (req, res) => {
 })
 
 router.post("/login", (req, res ) => {
-  const {email , password } = req.body;
+  const {userName , password } = req.body;
   console.log(req.body);
 
     //if any fields are missing, return
-  if (!email || !password) {
+  if (!userName || !password) {
     return res.status(400).send("Please enter the required fields.");
   }
 
@@ -72,7 +71,7 @@ router.post("/login", (req, res ) => {
 
   //try to find that user
   users.find((user) => {
-    if (user.email === currentUser.email) {
+    if (user.userName === currentUser.userName) {
       const passwordsMatch = bcrypt.compareSync(
         currentUser.password,
         user.password
@@ -85,7 +84,7 @@ router.post("/login", (req, res ) => {
 
     // if they match, create a JWT and return in the response
     const token = jwt.sign(
-      { id: user.id, email: user.email },
+      { id: user.id, userName: user.firstName },
       process.env.JWT_SECRET, 
       { expiresIn: "1h" }
   );

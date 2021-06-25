@@ -4,7 +4,7 @@ function Footer () {
   return (
     <div>
       <footer className="footer">
-          reach out
+        <a className="footer__link" href="mailto:hello.at.plant.it@gmail.com" subject="hello from">reach out</a> 
       </footer>
     </div>
   )

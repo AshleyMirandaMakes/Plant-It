@@ -130,7 +130,7 @@ class PlantPickerPage extends Component {
             <article className="plantCard">
               <Link className="plantCard__link" key={this.state.pickedPlants.id} to={"/allPlants/" + this.state.pickedPlants.id}>
               <div className="plantCard__container">
-                <img className="plantCard__left" src={`http://localhost:8080/${this.state.pickedPlants.image}`} alt={this.state.pickedPlants.commonName}/>
+                <img className="plantCard__left" id="plantCard__left--special" src={`http://localhost:8080/${this.state.pickedPlants.image}`} alt={this.state.pickedPlants.commonName}/>
                 <div className="plantCard__right">
                   <h3 className="plantCard__heading">{this.state.pickedPlants.commonName}</h3>
                     <div className="plantCard__subheadings">

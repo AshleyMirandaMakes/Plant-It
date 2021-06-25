@@ -16,5 +16,8 @@
     background-color: $color-moss;
     margin: .5rem ;
     border-radius: 4px;
+    &:hover {
+      padding: .75rem;
+    }
   }
 }

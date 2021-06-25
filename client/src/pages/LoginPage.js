@@ -4,6 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import Input from "../components/Input/Input";
 import "./LoginPage.scss";
+import Footer from "../components/Footer/Footer";
 
 class Login extends Component {
     state = {
@@ -16,7 +17,7 @@ class Login extends Component {
 
         axios
             .post("http://localhost:8080/api/users/login", {
-                email: event.target.email.value,
+                userName: event.target.userName.value,
                 password: event.target.password.value,
             })
             .then((response) => {
@@ -37,7 +38,7 @@ class Login extends Component {
                 <form className="login__form" onSubmit={this.handleSubmit}>
                     <h2 className="login__title">Login to your account</h2>
 
-                    <Input type="text" name="email" label="Email" placeholder="" />
+                    <Input type="text" name="userName" label="User Name" placeholder="" />
                     <Input type="password" name="password" label="Password" placeholder="" />
 
                     <button className="login__button">Log in</button>

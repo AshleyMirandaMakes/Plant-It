@@ -4,6 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import Input from "../components/Input/Input";
 
+
 class Signup extends Component {
   state = {
     error: "",
@@ -14,9 +15,9 @@ class Signup extends Component {
     event.preventDefault();
 
   axios
-    .post("http://localhost:8080/api/users/signUp", {
-      firstName: event.target.firstName.value,
-      email: event.target.email.value,
+      .post
+      (`http://localhost:8080/api/users/signUp`, {
+      userName: event.target.userName.value,
       password: event.target.password.value,
       confirmPassword: event.target.confirmPassword.value,
     })
@@ -37,8 +38,7 @@ class Signup extends Component {
         <section className="signUp__container">
         <form className="signUp__form" onSubmit={this.handleSubmit}>
           <h1 className="signUp__title">Sign up</h1>
-            <Input type="text" name="firstName" label="First Name" />
-            <Input type="text" name="email" label="Email" />
+            <Input type="text" name="userName" label="User Name" />
             <Input type="password" name="password" label="Password" />
             <Input type="password" name="confirmPassword" label="Confirm Password" />
             <button className="signUp__button">Sign up</button>

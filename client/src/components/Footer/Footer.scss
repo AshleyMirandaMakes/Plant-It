@@ -1,3 +1,41 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/variables' as *;
 @use '../../partials/resets' as *;
+
+.footer {
+  @include flex-center;
+  @include margin-auto;
+  width: 100%;
+  height: 2rem;
+  // &__link {
+  //   @include link-reset;
+  //   @include font-regular;
+  //   color: $color-tuna;
+  //   font-size: 1rem;
+  //   margin-top: 14rem;
+  //   @include tablet {
+  //     font-size: 1.25rem;
+  //   }
+  //   &:hover {
+  //     color: $color-pink;
+  //     font-size: 1.35rem;
+  //   }
+  // }
+  &__link {
+    @include margin-auto;
+    @include flex-center;
+    @include link-reset;
+    @include font-light;
+    margin-top:1rem;
+    padding: .25rem;
+    font-size: 1.1rem;
+    color: $color-tuna;
+    //background-color: $color-white;
+    border: none;
+    &:hover {
+      @include font-light-italic;
+      color: $color-pink;
+      font-size: 1.35rem;
+    }
+  }
+}

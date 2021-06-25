@@ -16,11 +16,18 @@
     @include font-abril;
     color: $color-tuna;
     font-size: 2rem;
+    @include tablet {
+      font-size: 2.5rem;
+    }
   }
   &__heading {
     @include flex-center;
     font-size: 1.5rem;
     padding: 1.5rem 0;
+    @include tablet {
+      font-size: 2rem;
+      padding: 2rem 0;
+    }
   }
   &__logout {
     @include margin-auto;
@@ -35,6 +42,8 @@
     border: none;
     &:hover {
       @include font-light-italic;
+      color: $color-pink;
+      font-size: 1.35rem;
     }
   }
 

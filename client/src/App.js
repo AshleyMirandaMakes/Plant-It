@@ -8,6 +8,7 @@ import PlantDetailsPage from "./pages/PlantDetailsPage";
 import FavoritePlantsPage from "./pages/FavoritePlantsPage";
 import CarePage from "./pages/CarePage";
 
+
 import "./App.scss"
 
 

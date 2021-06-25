@@ -73,9 +73,10 @@
     padding: 1rem .5rem;
     min-width: 218px;
     @include tablet {
+      //margin-left: .5rem;
       width: 60%;
       //margin-left: 0;
-      padding: 1rem 0;
+      //padding: 1rem 0;
     }
   }
   &__top{
@@ -139,5 +140,11 @@
       color: $color-tuna;
       background-color: $color-light-green;
     }
+  }
+}
+
+#plantCard__left--special{
+  @include tablet {
+    margin-left: 3.5rem;
   }
 }

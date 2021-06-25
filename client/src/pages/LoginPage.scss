@@ -33,11 +33,11 @@
     font-size: 2.5rem;
     @include tablet {
       padding-top: 7.5rem;
-      font-size: 3.5rem;
+      font-size: 3.75rem;
     }
     @include desktop {
       padding-top: 11rem;
-      font-size: 4.5rem;
+      font-size: 6.5rem;
       padding-bottom: .5rem;
     }
   }
@@ -50,7 +50,7 @@
     //@include font-regular;
     color: $color-tuna;
     padding-bottom: .5rem;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     @include tablet {
       font-size: 1.75rem;
     }
@@ -86,14 +86,16 @@
   }
   &__link {
     @include link-reset;
-    @include font-thin;
+    @include font-bold;
     padding: 0 .25rem;
     margin-left: .5rem;
     color: $color-pink;
     @include tablet {
-      @include font-bold;
       font-size: 1.5rem;
       padding: 0;
+    }
+    &:hover {
+      font-size: 1.65rem;
     }
   }
 }

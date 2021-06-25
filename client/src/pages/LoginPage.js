@@ -50,7 +50,6 @@ class Login extends Component {
                     Need an account? <Link to="/signUp" className="login__link">Sign up</Link>
                 </p>
                 </section>
-                <Footer />
             </main>
         );
     }

@@ -20,4 +20,4 @@ cd server
 node index.js
 ```
 
-The app should be up and running!
+This should get your app up and running! Feel free to use add yourself as a user, and find a new plant for your home!

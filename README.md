@@ -1,14 +1,23 @@
-# Plant-It
+# Plant - It
 
-Hey there! Thanks for checking out this project.
-This is directed at helping users find plants that are suited to their home environment. 
+Hey there! Thanks for checking out this project. 
+This is directed at helping users find plants that are suited to their home environment.
 
+## Technologies
 
+This project was created using React, JWT Auth, Express, Node.js, SCSS, React-Step-Wizard, & Axios
 
-In order to view this project, download the code.
+## Setup
 
-In your favorite code editing application, you will need to cd into client and run ~ $ npm install ~, and then  ~ $ npm start ~ .
-You will then need to cd into the server and run ~ $ node index.js ~.
+In order to run this project, install the code locally using npm. 
 
+```
+cd client
+npm install
+npm start
 
-This should get the app up and running for you to view.
+cd server 
+node index.js
+```
+
+The app should be up and running!

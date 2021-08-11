@@ -15,7 +15,6 @@ class PlantPickerPage extends Component {
     safeForDogs : false,
     safeForCats : false,
     displayPickedPlants: false,
-    // user
     isLoggedIn: false,
     user: null,
   };

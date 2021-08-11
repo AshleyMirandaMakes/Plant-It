@@ -24,9 +24,10 @@ node index.js
 
 This should get your app up and running! Feel free to use add yourself as a user, and find a new plant for your home!
 
-##Screenshots
 ![Plant-It-Login](https://user-images.githubusercontent.com/65312321/129061048-6f55f8e9-2169-43ec-9889-2cdeec69a8ad.jpg)
+
 ![Plant-It-Welcome](https://user-images.githubusercontent.com/65312321/129061087-bd02a3b1-8b29-4eef-8700-5fa0b0db26a9.jpg)
+
 ![Plant-It-Picker](https://user-images.githubusercontent.com/65312321/129061156-2d1c9dc7-fcf8-4564-ba86-8f6fcc1d5a9d.jpg)
 
 
